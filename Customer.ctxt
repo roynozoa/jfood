@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Customer
+comment1.params=idCustomer
+comment1.target=int\ getId(int)
+comment10.params=joinDate
+comment10.target=void\ setJoinDate(java.lang.String)
+comment2.params=nameCustomer
+comment2.target=java.lang.String\ getName(java.lang.String)
+comment3.params=emailCustomer
+comment3.target=java.lang.String\ getEmail(java.lang.String)
+comment4.params=passwordCustomer
+comment4.target=java.lang.String\ getPassword(java.lang.String)
+comment5.params=joinDateCustomer
+comment5.target=java.lang.String\ getJoinDate(java.lang.String)
+comment6.params=id
+comment6.target=void\ setId(int)
+comment7.params=name
+comment7.target=void\ setName(java.lang.String)
+comment8.params=email
+comment8.target=void\ setEmail(java.lang.String)
+comment9.params=password
+comment9.target=void\ setPassword(java.lang.String)
+numComments=11
