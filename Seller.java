@@ -1,11 +1,10 @@
 
-
-public class Customer {
+public class Seller{
     private int id;
-    private String name,email, password, joidDate;
-    
-    public Customer(){
-    
+    private String name,email,phoneNumber;
+
+    public Seller(){
+       
     }
     
     public static int getId(){
@@ -19,12 +18,8 @@ public class Customer {
     public static String getEmail(){
         return "oke";
     }
-    
-    public static String getPassword(){
-        return "oke";
-    }
-    
-    public static String getJoinDate(){
+
+    public static String getPhoneNumber(){
         return "oke";
     }
     
@@ -40,14 +35,7 @@ public class Customer {
     
     }
     
-    public static void setPassword(String password){
+    public static void setPhoneNumber(String phoneNumber){
     
     }
-    
-    public static void setJoinDate(String joinDate){
-    
-    }
-    
-    
-
 }
