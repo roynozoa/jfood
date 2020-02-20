@@ -1,4 +1,4 @@
-
+//komen
 public class Seller{
     private int id;
     private String name,email,phoneNumber;

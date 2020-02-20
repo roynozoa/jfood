@@ -1,4 +1,6 @@
-
+/*
+ * komen
+ */
 
 public class Food{
     private int id,price;
