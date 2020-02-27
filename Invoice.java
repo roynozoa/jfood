@@ -2,41 +2,54 @@
 public class Invoice{
     private int id,idFood,totalPrice;
     private String date;
+    Customer customer;
 
-    public Invoice(){
-        
+    public Invoice(int id, int idFood, String date, Customer customer, int totalPrice){
+        this.id = id;
+        this.idFood = idFood;
+        this.date = date;
+        this.customer = customer;
+        this.totalPrice = totalPrice;
     }
 
-    public static int getId(){
-        return 0;
+    public int getId(){
+        return this.id = id;
     }
     
-    public static int getIdFood(){
-        return 0;
+    public int getIdFood(){
+        return this.idFood = idFood;
     }
     
-    public static String getDate(){
-        return "oke";
+    public String getDate(){
+        return this.date = date;
     }
     
-    public static int getTotalPrice(){
-        return 0;
+    public Customer getCustomer(){
+        return this.customer = customer;
     }
     
-    public static void setId(int id){
-        
+    public int getTotalPrice(){
+        return this.totalPrice = totalPrice;
     }
     
-    public static void setIdFood(int idFood){
-        
+    public void setId(int id){
+        this.id = id;
     }
     
-    public static void setDate(String date){
-        
+    public void setIdFood(int idFood){
+        this.idFood = idFood;
     }
     
-    
-    public static void setTotalPrice(int totalPrice){
-        
+    public void setDate(String date){
+        this.date = date;
     }
+    
+    public void setTotalPrice(int totalPrice){
+        this.totalPrice = totalPrice;
+    }
+    
+    public void printData(){
+        //print data
+    }
+    
 }

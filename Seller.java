@@ -2,40 +2,58 @@
 public class Seller{
     private int id;
     private String name,email,phoneNumber;
+    Location location;
 
-    public Seller(){
-       
+    public Seller(int id, String name, String email, String phoneNumber, Location location){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
     }
     
-    public static int getId(){
-        return 0;
+    public int getId(){
+        return this.id;
     }
     
-    public static String getName(){
-        return "oke";
+    public String getName(){
+        return this.name;
     }
     
-    public static String getEmail(){
-        return "oke";
+    public String getEmail(){
+        return this.email;
     }
 
-    public static String getPhoneNumber(){
-        return "oke";
+    public String getPhoneNumber(){
+        return this.phoneNumber;
     }
     
-    public static void setId(int id){
-        
+    public Location getLocation(){
+        return this.location;
     }
     
-    public static void setName(String name){
-    
+    public void setId(int id){
+        this.id = id;
     }
     
-    public static void setEmail(String email){
+    public void setName(String name){
+        this.name = name;
+    }   
     
+    public void setEmail(String email){
+        this.email = email;
     }
     
-    public static void setPhoneNumber(String phoneNumber){
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
     
+    public void setLocation(Location location){
+        this.location = location;
+    }
+    
+    public void printData(){
+        //print data
+        System.out.println(name);
     }
 }
