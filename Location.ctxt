@@ -1,19 +1,27 @@
 #BlueJ class context
 comment0.target=Location
+comment0.text=\r\n\ Kelas\ Location\ berguna\ untuk\ menyimpan\ alamat\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (2.0\ 27/02/2020)\r\n
 comment1.params=city\ province\ description
 comment1.target=Location(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=
 comment2.target=java.lang.String\ getProvince()
+comment2.text=\r\n\ Metode\ getProvince\ untuk\ mendapatknan\ lokasi\ provinsi\r\n\r\n\ \r\n\ @return\ \ \ \ provinsi\r\n
 comment3.params=
 comment3.target=java.lang.String\ getCity()
+comment3.text=\r\n\ Metode\ getCity\ untuk\ mendapatknan\ lokasi\ kota\r\n\r\n\ \r\n\ @return\ \ \ \ kota\r\n
 comment4.params=
 comment4.target=java.lang.String\ getDescription()
+comment4.text=\r\n\ Metode\ getDescription\ untuk\ mendapatknan\ deskripsi\ lokasi\ \ \ \ \ *\r\n\ \r\n\ @return\ \ \ \ deskripsi\r\n
 comment5.params=province
 comment5.target=void\ setProvince(java.lang.String)
+comment5.text=\r\n\ Metode\ setProvince\ untuk\ mengatur\ lokasi\ provinsi\r\n\r\n\ \r\n\ @param\ \ \ \ provinsi\r\n
 comment6.params=city
 comment6.target=void\ setCity(java.lang.String)
+comment6.text=\r\n\ Metode\ setCity\ untuk\ mengatur\ lokasi\ kota\r\n\r\n\ \r\n\ @param\ \ \ \ kota\r\n
 comment7.params=description
 comment7.target=void\ setDescription(java.lang.String)
+comment7.text=\r\n\ Metode\ setDescription\ untuk\ mengatur\ deskripsi\ lokasi\r\n\r\n\ \r\n\ @param\ \ \ \ deskripsi\r\n
 comment8.params=
 comment8.target=void\ printData()
+comment8.text=\r\n\ Metode\ printData\ untuk\ menampilkan\ nama\ penjual\r\n\r\n\ \r\n\ \r\n
 numComments=9

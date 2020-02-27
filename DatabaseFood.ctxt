@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.target=DatabaseFood
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseFood\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Kelas\ DatabaseFood\ berguna\ untuk\ menyimpan\ database\ makanan\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (2.0\ 27/02/2020)\r\n
 comment1.params=
 comment1.target=DatabaseFood()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseFood\r\n
 comment2.params=food
 comment2.target=boolean\ addFood(Food)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.text=\r\n\ Metode\ addFood\ untuk\ menambahkan\ makanan\r\n\r\n\ \r\n\ @return\ \ \ \ false\r\n
 comment3.params=food
 comment3.target=boolean\ removeFoood(Food)
+comment3.text=\r\n\ Metode\ removeFood\ untuk\ menghapus\ makanan\r\n\r\n\ \r\n\ @return\ \ \ \ false\r\n
 comment4.params=
 comment4.target=java.lang.String[]\ getListFood()
-comment4.text=public\ Food\ getFood(){\r\n\ \ \ \ \ \ \ \ return\ 0;\r\n}
+comment4.text=\r\n\ Metode\ getListFood\ untuk\ mengambil\ daftar\ makanan\r\n\r\n\ \r\n\ @return\ \ \ \ daftar\ makanan\r\n
 numComments=5
