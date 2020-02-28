@@ -8,7 +8,7 @@
 public class DatabaseFood{
     // instance variables - replace the example below with your own
     //merupakan field dari kelas DatabaseFood
-    String[] listFood;
+    private String[] listFood;
 
     
     public DatabaseFood()
@@ -40,7 +40,7 @@ public class DatabaseFood{
     
     //fungsi yang belum berhasil
     /*public Food getFood(){
-        return 0;
+        return this.food;
     }*/
     
     /**
