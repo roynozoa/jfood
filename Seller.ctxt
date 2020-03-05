@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Seller
-comment0.text=\r\n\ Kelas\ Seller\ berguna\ untuk\ menyimpan\ data\ penjual\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (2.0\ 27/02/2020)\r\n
+comment0.text=\r\n\ Kelas\ Seller\ berguna\ untuk\ menyimpan\ data\ penjual\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (3.0\ 05/03/2020)\r\n
 comment1.params=id\ name\ email\ phoneNumber\ location
 comment1.target=Seller(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ Location)
+comment1.text=\r\n\ Merupakan\ constructor\ dari\ kelas\ Seller\r\n
 comment10.params=phoneNumber
 comment10.target=void\ setPhoneNumber(java.lang.String)
 comment10.text=\r\n\ Metode\ setPhoneNumber\ untuk\ mengatur\ nomoer\ hp\ penjual\r\n\r\n\ \r\n\ @param\ \ \ \ nomor\ hp\ seller\r\n

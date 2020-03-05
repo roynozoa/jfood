@@ -5,23 +5,27 @@
  * Kelas Food berguna untuk menyimpan data makanan
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (2.0 27/02/2020)
+ * @version (3.0 05/03/2020)
  */
 
 public class Food{
     //merupakan field dari kelas Food
     private int id,price;
-    private String name,category;
+    private String name;
     private Seller seller;
+    private FoodCategory category;
 
-    
-    public Food(int id, String name, Seller seller, int price, String category){ 
+    /**
+     * Merupakan constructor dari kelas Food
+     */
+    public Food(int id, String name, Seller seller, int price, FoodCategory category){ 
         //Food 
         this.id = id;
         this.price = price;
         this.name = name;
         this.seller = seller;
         this.category = category;
+        
         
     }
 
@@ -32,7 +36,7 @@ public class Food{
      * @return    id makanan
      */
     public int getId(){
-        //this.id = id;
+   
         return this.id;
     }
     
@@ -73,7 +77,7 @@ public class Food{
      * 
      * @return    kategori makanan
      */
-    public String getCategory(){
+    public FoodCategory getCategory(){
         return this.category;
     }
     
@@ -123,7 +127,7 @@ public class Food{
      * 
      * @param    kategori makanan
      */
-    public void setCategory(String category){
+    public void setCategory(FoodCategory category){
         this.category = category;
     }
     
@@ -134,6 +138,12 @@ public class Food{
      * 
      */
     public void printData(){
-        System.out.println(name);
+        System.out.println("==========FOOD==========");
+        System.out.println("ID: "+ id);
+        System.out.println("Name: "+ name);
+        System.out.println("Seller: "+ seller.getName());
+        System.out.println("City: "+ seller.getLocation().getCity());
+        System.out.println("Price: "+ price);
+        System.out.println("Category: "+ category);
     }
 }

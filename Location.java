@@ -2,13 +2,16 @@
  * Kelas Location berguna untuk menyimpan alamat
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (2.0 27/02/2020)
+ * @version (3.0 05/03/2020)
  */
 
 public class Location{
     //merupakan field dari kelas Location
     String province, description, city;
     
+    /**
+     * Merupakan constructor dari kelas Location
+     */
     public Location(String city, String province, String description){
         this.city = city;
         this.province = province;

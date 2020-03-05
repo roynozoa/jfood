@@ -1,32 +1,45 @@
 
 /**
- * Write a description of class DatabaseSeller here.
+ * Kelas databaseseller berguna untuk menyimpan database penjual
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Muhammad Adisatriyo Pratama)
+ * @version (3.0 05/03/2020)
  */
 public class DatabaseSeller
 {
-    private String[] listSeller;
+    private static String[] listSeller;
     
-    public DatabaseSeller(String[] listSeller){
-        this.listSeller = listSeller;
-        
-    }
-    
-    public boolean addSeller(Seller seller){
+    /**
+     * Method untuk menambahkan seller
+     * 
+     * @return true
+     */
+    public static boolean addSeller(Seller seller){
         return true;
     }
     
-    public boolean removeSeller(Seller seller){
+    
+    /**
+     * Method untuk menghapus seller
+     * @return false
+     */
+    public static boolean removeSeller(Seller seller){
         return false;
     }
     
-    /*public Seller getSeller(){
-        return this.seller;
-    }*/
+    /**
+     * Method getSeller untuk mengambil data seller
+     * @return null
+     */
+    public static Seller getSeller(){
+        return null;
+    }
     
-    public String[] getListSeller(){
-        return this.listSeller = listSeller;
+    /**
+     * Method getListSeller untuk mengambil data list seller
+     * @return listSeller
+     */
+    public static String[] getListSeller(){
+        return listSeller;
     }
 }

@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Location
-comment0.text=\r\n\ Kelas\ Location\ berguna\ untuk\ menyimpan\ alamat\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (2.0\ 27/02/2020)\r\n
+comment0.text=\r\n\ Kelas\ Location\ berguna\ untuk\ menyimpan\ alamat\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (3.0\ 05/03/2020)\r\n
 comment1.params=city\ province\ description
 comment1.target=Location(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Merupakan\ constructor\ dari\ kelas\ Location\r\n
 comment2.params=
 comment2.target=java.lang.String\ getProvince()
 comment2.text=\r\n\ Metode\ getProvince\ untuk\ mendapatknan\ lokasi\ provinsi\r\n\r\n\ \r\n\ @return\ \ \ \ provinsi\r\n

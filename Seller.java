@@ -3,7 +3,7 @@
  * Kelas Seller berguna untuk menyimpan data penjual
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (2.0 27/02/2020)
+ * @version (3.0 05/03/2020)
  */
 public class Seller{
     //merupakan field dari kelas Seller
@@ -11,9 +11,9 @@ public class Seller{
     private String name,email,phoneNumber;
     Location location;
 
-    
-    //Method seller yang menyimpan data
-    
+    /**
+     * Merupakan constructor dari kelas Seller
+     */
     public Seller(int id, String name, String email, String phoneNumber, Location location){
         this.id = id;
         this.name = name;

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=PaymentType
+comment0.text=\r\n\ Kelas\ PaymentType\ berguna\ untuk\ menyimpan\ tipe\ makanan\r\n\ Kelas\ berupa\ eNum\ yang\ menyimpan\ array\ tipe\ makanan\r\n\ \r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (3.0\ 05/03/2020)\r\n
+comment1.params=type
+comment1.target=PaymentType(java.lang.String)
+comment1.text=\r\n\ method\ untuk\ mendapatkan\ tipe\ payment\r\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment2.text=\r\n\ mengubah\ tipe\ payment\ menjadi\ string\r\n
+numComments=3
