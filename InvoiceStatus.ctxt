@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=InvoiceStatus
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ InvoiceStatus\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=status
+comment1.target=InvoiceStatus(java.lang.String)
+comment1.text=\r\n\ method\ untuk\ mendapatkan\ status\ invoice\r\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment2.text=\r\n\ mengubah\ status\ menjadi\ string\r\n
+numComments=3
