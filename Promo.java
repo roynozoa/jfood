@@ -39,7 +39,7 @@ public class Promo{
     }
     
     public boolean getActive(){
-        return true;
+        return this.active;
     }
     
     public void setId(int id){
