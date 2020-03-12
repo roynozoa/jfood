@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=DatabasePromo
+comment0.text=\r\n\ Kelas\ DatabasePromo\ berguna\ untuk\ menyimpan\ database\ promo\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (12/03/2020)\r\n
+comment1.params=promo
+comment1.target=boolean\ addPromo(Promo)
+comment1.text=\r\n\ Metode\ addPromo\ untuk\ menambahkan\ promo\r\n\r\n\ \r\n\ @return\ \ \ \ false\r\n
+comment2.params=promo
+comment2.target=boolean\ removePromo(Promo)
+comment2.text=\r\n\ Metode\ removePromo\ untuk\ menghapus\ Promo\r\n\r\n\ \r\n\ @return\ \ \ \ false\r\n
+comment3.params=
+comment3.target=Promo\ getPromo()
+comment4.params=
+comment4.target=java.lang.String[]\ getListPromo()
+comment4.text=\r\n\ Metode\ getListPromo\ untuk\ mengambil\ daftar\ promo\r\n\r\n\ \r\n\ @return\ \ \ \ daftar\ makanan\r\n
+numComments=5

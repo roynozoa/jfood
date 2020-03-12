@@ -1,22 +1,33 @@
 //komen
-public class Invoice{
-    private int id,idFood,totalPrice;
+/**
+ * Kelas Invoice berguna untuk menyimpan data invoice
+ *
+ * @author (Muhammad Adisatriyo Pratama)
+ * @version (3.0 12/03/2020)
+ */
+abstract class Invoice{
+    
+    //field Invoice
+    
+    private int id;
+    private Food food;
     private String date;
+    protected int totalPrice;
     private Customer customer;
-    private PaymentType paymentType;
-    private InvoiceStatus status;
+    //private PaymentType paymentType;
+    private InvoiceStatus invoiceStatus;
 
     /**
      * Constructor kelas Invoice
      */
-    public Invoice(int id, int idFood, String date, int totalPrice, Customer customer, PaymentType paymentType, InvoiceStatus status){
+    public Invoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus){
         this.id = id;
-        this.idFood = idFood;
+        this.food = food;
         this.date = date;
         this.totalPrice = totalPrice;
         this.customer = customer;
-        this.paymentType = paymentType;
-        this.status = status;
+        //this.paymentType = paymentType;
+        this.invoiceStatus = invoiceStatus;
     }
 
     /**
@@ -35,8 +46,8 @@ public class Invoice{
      * 
      * @return   id makanan invoice
      */
-    public int getIdFood(){
-        return this.idFood;
+    public Food getFood(){
+        return this.food;
     }
     
     /**
@@ -72,11 +83,9 @@ public class Invoice{
     /**
      * Metode getPaymentType untuk mendapatkan tipe pembayaran
      * 
-     * @return   tipe pembayaran
+     * 
      */
-    public PaymentType getPaymentType(){
-        return this.paymentType;
-    }
+    public abstract PaymentType getPaymentType();
     
     /**
      * Metode getStatus untuk mendapatkan status invoice
@@ -84,7 +93,7 @@ public class Invoice{
      * @return   status pembayaran
      */
     public InvoiceStatus getInvoiceStatus(){
-        return this.status;
+        return this.invoiceStatus;
     }
     
     /**
@@ -103,8 +112,8 @@ public class Invoice{
      * 
      * @param    id makanan
      */
-    public void setIdFood(int idFood){
-        this.idFood = idFood;
+    public void setFood(Food idFood){
+        this.food = food;
     }
     
     /**
@@ -121,11 +130,9 @@ public class Invoice{
      * Metode setTotalPrice untuk mengatur total harga invoice
      *
      * 
-     * @param    total harga invoice
+     * 
      */
-    public void setTotalPrice(int totalPrice){
-        this.totalPrice = totalPrice;
-    }
+    public abstract void setTotalPrice();
     
     /**
      * Metode setCustomer untuk mengatur pembeli
@@ -137,15 +144,6 @@ public class Invoice{
         this.customer = customer;
     }
     
-    /**
-     * Metode setPaymentType untuk mengatur tipe pembayaran
-     *
-     * 
-     * @param    tipe pembayaran
-     */
-    public void setPaymentType(PaymentType paymentType){
-        this.paymentType = paymentType;
-    }
     
     /**
      * Metode setInvoiceStatus untuk mengatur status invoice
@@ -153,8 +151,8 @@ public class Invoice{
      * 
      * @param    status invoice
      */
-    public void setInvoiceStatus(InvoiceStatus status){
-        this.status = status;
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus){
+        this.invoiceStatus = invoiceStatus;
     }
     
     /**
@@ -163,15 +161,8 @@ public class Invoice{
      * 
      * 
      */
-    public void printData(){
-        System.out.println("==========INVOICE==========");
-        System.out.println("ID: "+ id);
-        System.out.println("Food ID: "+ idFood);
-        System.out.println("Date: "+ date);
-        System.out.println("Customer: "+ customer.getName());
-        System.out.println("Total Price: "+ totalPrice);
-        System.out.println("Status: "+ status);
+    public abstract void printData();
         
-    }
+    
     
 }

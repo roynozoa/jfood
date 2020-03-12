@@ -5,7 +5,7 @@
  * Kelas Customer berguna untuk menyimpan data pembeli
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (2.0 27/02/2020)
+ * @version (3.0 12/03/2020)
  */
 public class Customer {
     //merupakan field dari kelas Customer
