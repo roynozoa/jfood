@@ -2,7 +2,7 @@
  * Kelas Promo berguna untuk menyimpan data promo
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 12/03/2020)
+ * @version (12/03/2020)
  */
 public class Promo{
     //field Promo
@@ -12,7 +12,7 @@ public class Promo{
     private int minPrice;
     private boolean active;
     /**
-     * 
+     * Constructor Kelas Promo
      */
     public Promo(int id, String code, int discount, int minPrice, boolean active){
     this.id = id;

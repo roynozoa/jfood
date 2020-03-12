@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Promo
-comment0.text=\r\n\ Kelas\ Promo\ berguna\ untuk\ menyimpan\ data\ promo\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (3.0\ 12/03/2020)\r\n
+comment0.text=\r\n\ Kelas\ Promo\ berguna\ untuk\ menyimpan\ data\ promo\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (12/03/2020)\r\n
 comment1.params=id\ code\ discount\ minPrice\ active
 comment1.target=Promo(int,\ java.lang.String,\ int,\ int,\ boolean)
-comment1.text=\r\n\ \r\n
+comment1.text=\r\n\ Constructor\ Kelas\ Promo\r\n
 comment10.params=minPrice
 comment10.target=void\ setMinPrice(int)
 comment11.params=active

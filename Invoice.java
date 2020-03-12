@@ -3,7 +3,7 @@
  * Kelas Invoice berguna untuk menyimpan data invoice
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 12/03/2020)
+ * @version (12/03/2020)
  */
 abstract class Invoice{
     
@@ -14,7 +14,6 @@ abstract class Invoice{
     private String date;
     protected int totalPrice;
     private Customer customer;
-    //private PaymentType paymentType;
     private InvoiceStatus invoiceStatus;
 
     /**
@@ -26,7 +25,6 @@ abstract class Invoice{
         this.date = date;
         this.totalPrice = totalPrice;
         this.customer = customer;
-        //this.paymentType = paymentType;
         this.invoiceStatus = invoiceStatus;
     }
 
