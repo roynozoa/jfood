@@ -1,7 +1,7 @@
 public class JFood
 {
     public static void main(String[] args){
-        
+        //Soal CS
         Location lokasi = new Location("Jakarta Timur", "DKI Jakarta", "Lokasi jajan gorengan");
         Seller tukangGorengan = new Seller(003, "Muhammad Adisatriyo Pratama","muhammad.adisatriyo@ui.ac.id", "081297449833", lokasi);
         Customer pembeli = new Customer(001, "Pembeli", "email@pembeli.com", "inipassword", "05-03-2020");
@@ -16,6 +16,11 @@ public class JFood
         struk2.printData();
         struk3.printData();
         
-       
+        //Soal Post Test
+        Invoice strukTanpaOngkir = new CashInvoice(1, gorengan, "13/03/2020", pembeli, InvoiceStatus.Finished);
+        Invoice strukDenganOngkir = new CashInvoice(1, gorengan, "13/03/2020", pembeli, InvoiceStatus.Finished, 10000);
+        
+        strukTanpaOngkir.printData();
+        strukDenganOngkir.printData();
     }
 }

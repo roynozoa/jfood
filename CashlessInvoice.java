@@ -75,26 +75,17 @@ public class CashlessInvoice extends Invoice{
      * method printData yang dapat ditampilkan pada main method
      */
     public void printData(){
+        setTotalPrice();
+        System.out.println("==========INVOICE==========");
+        System.out.println("ID: "+ super.getId());
+        System.out.println("Food: " + getFood().getName());
+        System.out.println("Date: " + super.getDate());
+        System.out.println("Customer: " + getCustomer().getName());
+        System.out.println("Total Price: " + getTotalPrice());
+        System.out.println("Payment Type: " + getPaymentType());
         if (promo!= null && getPromo().getActive() == true && getFood().getPrice() > getPromo().getMinPrice() ){
-            System.out.println("==========INVOICE==========");
-            System.out.println("ID: "+ super.getId());
-            System.out.println("Food: " + getFood().getName());
-            System.out.println("Date: " + super.getDate());
-            System.out.println("Customer: " + getCustomer().getName());
             System.out.println("Promo: "+ getPromo().getCode());
-            setTotalPrice();
-            System.out.println("Total Price: " + getTotalPrice());
-            System.out.println("Payment Type: " + getPaymentType());
-        } else{
-            System.out.println("==========INVOICE==========");
-            System.out.println("ID: "+ super.getId());
-            System.out.println("Food: " + getFood().getName());
-            System.out.println("Date: " + super.getDate());
-            System.out.println("Customer: " + getCustomer().getName());
-            setTotalPrice();
-            System.out.println("Total Price: " + getTotalPrice());
-            System.out.println("Payment Type: " + getPaymentType());
-        }
+        } 
         System.out.println();
     }
    
