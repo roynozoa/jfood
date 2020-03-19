@@ -32,8 +32,8 @@ public class Customer {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.joinDate = joinDate;
-        //joinDate.set(year, month, dayOfMonth);
+        this.joinDate = new GregorianCalendar(year, month - 1, dayOfMonth);
+        
     }
     
     public Customer(int id, String name, String email, String password) {
@@ -124,14 +124,14 @@ public class Customer {
      * @param    email customer
      */
     public void setEmail(String email){
-        String emailChecker = "[A-Za-z0-9&*_~]+@[A-Za-z0-9.-]";
+        String emailChecker = "^[\\w!#$%’+/=?`{|~^-]+(?:\\.[\\w!#$%’+/=?`{|}^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
         Pattern checkEmail = Pattern.compile(emailChecker);
         Matcher emailMatcher = checkEmail.matcher(email);
         if (emailMatcher.find()){
-            this.email = emailMatcher.group().trim();
+            this.email = email;
         }
         else {
-            this.email = null;
+            this.email = " ";
         }
         
         
@@ -144,11 +144,11 @@ public class Customer {
      * @param    password customer
      */
     public void setPassword(String password){
-        String passwordChecker = "^(?=.*[0-9]).{6, }$";
+        String passwordChecker = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\\d]{6,}$";
         Pattern checkPassword = Pattern.compile(passwordChecker);
         Matcher passwordMatcher = checkPassword.matcher(password);
         if (passwordMatcher.find() ){
-            this.password = passwordMatcher.group().trim();
+            this.password = password;
         }
         else {
             this.password = null;
@@ -169,8 +169,7 @@ public class Customer {
     }
     
     public void setJoinDate(int year, int month, int dayOfMonth){
-        
-        this.joinDate = joinDate;
+        this.joinDate = new GregorianCalendar(year, month - 1, dayOfMonth);
     }
     
     public String toString(){
