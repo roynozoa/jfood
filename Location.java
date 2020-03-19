@@ -77,15 +77,23 @@ public class Location{
         this.description = description;
     }
     
-    /**
+    public String toString(){
+        return String.format("Province=" + getProvince() + "\n" + 
+                            "City=" + getCity() + "\n" + 
+                            "Description=" + getDescription());
+                            
+    }
+    
+    /*
      * Metode printData untuk menampilkan nama penjual
      *
      * 
      * 
-     */
+     
     public void printData(){
         System.out.println(province);
         //print data
     }
+    */
 
 }

@@ -122,14 +122,21 @@ public class Seller{
         this.location = location;
     }
     
-    /**
+    public String toString(){
+        return String.format("Id=" + getId() + "\n" + 
+                            "Nama=" + getName() + "\n" + 
+                            "PhoneNumber=" + getPhoneNumber() + "\n" +
+                            "Location=" + getLocation());
+    }
+    /*
      * Metode printData untuk menampilkan nama penjual
      *
      * 
      * 
-     */
+    
     public void printData(){
         //print data
         System.out.println(name);
     }
+     */
 }

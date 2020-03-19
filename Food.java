@@ -131,12 +131,21 @@ public class Food{
         this.category = category;
     }
     
+    public String toString(){
+        return String.format("Id=" + getId() + "\n" + 
+                            "Nama=" + getName() + "\n" + 
+                            "Seller=" + seller.getName() + "\n" +
+                            "City=" + seller.getLocation().getCity() + "\n" +
+                            "Price=" + getPrice() + "\n" +
+                            "Category=" + getCategory());
+    }
+    /*
     /**
      * Metode printData untuk menampilkan nama penjual
      *
      * 
      * 
-     */
+    
     public void printData(){
         System.out.println("==========FOOD==========");
         System.out.println("ID: "+ id);
@@ -146,4 +155,5 @@ public class Food{
         System.out.println("Price: "+ price);
         System.out.println("Category: "+ category);
     }
+     */
 }

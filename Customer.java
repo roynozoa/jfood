@@ -1,23 +1,47 @@
-/*
- * komen
- */
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.text.SimpleDateFormat;  
+
 /**
  * Kelas Customer berguna untuk menyimpan data pembeli
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 12/03/2020)
+ * @version (19/03/2020)
  */
 public class Customer {
     //merupakan field dari kelas Customer
     private int id;
-    private String name,email, password, joinDate;
-    
-    public Customer(int id, String name, String email, String password, String joinDate) {
+    private String name;
+    private String email;
+    private String password;
+    private Calendar joinDate;
+        
+    public Customer(int id, String name, String email, String password, Calendar joinDate) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.joinDate = joinDate;
+    }
+    
+    public Customer(int id, String name, String email, String password, int year, int month, int dayOfMonth) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = joinDate;
+        //joinDate.set(year, month, dayOfMonth);
+    }
+    
+    public Customer(int id, String name, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        
     }
     
     /**
@@ -27,7 +51,7 @@ public class Customer {
      * @return    id customer
      */
     public int getId(){
-        return this.id = id;
+        return this.id;
     }
     
     /**
@@ -37,7 +61,7 @@ public class Customer {
      * @return    nama customer
      */
     public String getName(){
-        return this.name = name;
+        return this.name;
     }
     
     /**
@@ -47,7 +71,7 @@ public class Customer {
      * @return    email customer
      */
     public String getEmail(){
-        return this.email = email;
+        return this.email;
     }
     
     /**
@@ -57,7 +81,8 @@ public class Customer {
      * @return    password customer
      */
     public String getPassword(){
-        return this.password = password;
+        
+        return this.password;
     }
     
     /**
@@ -67,8 +92,9 @@ public class Customer {
      * @return    tanggal bergabung customer
      */
     
-    public String getJoinDate(){
-        return this.joinDate = joinDate;
+    public Calendar getJoinDate(){
+        
+        return this.joinDate; 
     }
     
     /**
@@ -98,7 +124,17 @@ public class Customer {
      * @param    email customer
      */
     public void setEmail(String email){
-        this.email = email;
+        String emailChecker = "[A-Za-z0-9&*_~]+@[A-Za-z0-9.-]";
+        Pattern checkEmail = Pattern.compile(emailChecker);
+        Matcher emailMatcher = checkEmail.matcher(email);
+        if (emailMatcher.find()){
+            this.email = emailMatcher.group().trim();
+        }
+        else {
+            this.email = null;
+        }
+        
+        
     }
     
     /**
@@ -108,7 +144,18 @@ public class Customer {
      * @param    password customer
      */
     public void setPassword(String password){
-        this.password = password;
+        String passwordChecker = "^(?=.*[0-9]).{6, }$";
+        Pattern checkPassword = Pattern.compile(passwordChecker);
+        Matcher passwordMatcher = checkPassword.matcher(password);
+        if (passwordMatcher.find() ){
+            this.password = passwordMatcher.group().trim();
+        }
+        else {
+            this.password = null;
+        }
+        
+
+        //this.password = password;
     }
     
     /**
@@ -117,19 +164,31 @@ public class Customer {
      * 
      * @param    tanggal bergabung customer
      */
-    public void setJoinDate(String joinDate){
+    public void setJoinDate(Calendar joinDate){
         this.joinDate = joinDate;
     }
     
-    /**
-     * Metode printData untuk menampilkan nama penjual
-     *
-     * 
-     * 
-     */
-    public void printData(){
-        //print data
-        System.out.println(name);
+    public void setJoinDate(int year, int month, int dayOfMonth){
+        
+        this.joinDate = joinDate;
+    }
+    
+    public String toString(){
+        SimpleDateFormat formatDate = new SimpleDateFormat ("dd MMMM yyyy");
+        if (joinDate == null){
+        return String.format("Id=" + getId() + "\n" + 
+                            "Nama=" + getName() + "\n" + 
+                            "Email=" + getEmail() + "\n" +
+                            "Password=" + password + "\n" +
+                            "Join Date=" + null + "\n");
+        } else {
+        return String.format("Id=" + getId() + "\n" + 
+                            "Nama=" + getName() + "\n" + 
+                            "Email=" + getEmail() + "\n" +
+                            "Password=" + password + "\n" +
+                            "Join Date=" + formatDate.format(joinDate.getTime()) + "\n");
+        
+        }
     }
 
 }

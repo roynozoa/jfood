@@ -62,6 +62,15 @@ public class Promo{
         this.active = active;
     }
     
+    public String toString(){
+        return String.format("Id=" + getId() + "\n" + 
+                            "Code=" + getCode() + "\n" + 
+                            "Discount=" + getDiscount() + "\n" +
+                            "MinPrice=" + getMinPrice() + "\n" +
+                            getActive());
+    }
+    
+    /*
     public void printData(){
         System.out.println(id);
         System.out.println(code);
@@ -69,5 +78,6 @@ public class Promo{
         System.out.println(minPrice);
         System.out.println(active);
     }
+    */
     
 }
