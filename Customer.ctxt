@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Customer
-comment0.text=\r\n\ Kelas\ Customer\ berguna\ untuk\ menyimpan\ data\ pembeli\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (19/03/2020)\r\n
+comment0.text=\r\n\ Kelas\ Customer\ berguna\ untuk\ menyimpan\ data\ pembeli\r\n\r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (20/03/2020)\r\n
 comment1.params=id\ name\ email\ password\ joinDate
 comment1.target=Customer(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.util.Calendar)
 comment10.params=name

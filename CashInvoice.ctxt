@@ -1,11 +1,10 @@
 #BlueJ class context
 comment0.target=CashInvoice
-comment0.text=\r\n\ Kelas\ CashInvoice\ merupakan\ subclass\ dari\ kelas\ Invoice\r\n\ Kelas\ ini\ berfungsi\ untuk\ menampilkan\ invoice\ bertipe\ cash\r\n\ \r\n\ @author\ (Muhammad\ Adisatriyo\ Pratama)\r\n\ @version\ (13/03/2020)\r\n
-comment1.params=id\ food\ date\ customer\ invoiceStatus
-comment1.target=CashInvoice(int,\ Food,\ java.lang.String,\ Customer,\ InvoiceStatus)
+comment1.params=id\ food\ customer\ invoiceStatus
+comment1.target=CashInvoice(int,\ Food,\ Customer,\ InvoiceStatus)
 comment1.text=\r\n\ Constructor\ 1\ kelas\ CashlessInvoice\ (tanpa\ ongkir)\r\n
-comment2.params=id\ food\ date\ customer\ invoiceStatus\ deliveryFee
-comment2.target=CashInvoice(int,\ Food,\ java.lang.String,\ Customer,\ InvoiceStatus,\ int)
+comment2.params=id\ food\ customer\ invoiceStatus\ deliveryFee
+comment2.target=CashInvoice(int,\ Food,\ Customer,\ InvoiceStatus,\ int)
 comment2.text=\r\n\ Constructor\ 2\ kelas\ CashlessInvoice\ (dengan\ ongkir)\r\n
 comment3.params=
 comment3.target=PaymentType\ getPaymentType()
@@ -20,6 +19,6 @@ comment6.params=
 comment6.target=void\ setTotalPrice()
 comment6.text=\r\n\ Metode\ setTotalPrice\ untuk\ mengatur\ harga\ setelah\ ada\ promo\r\n\r\n\ \r\n\ \r\n
 comment7.params=
-comment7.target=void\ printData()
-comment7.text=\r\n\ method\ printData\ yang\ dapat\ ditampilkan\ pada\ main\ method\r\n
+comment7.target=java.lang.String\ toString()
+comment7.text=\r\n\ method\ toString\ yang\ dapat\ ditampilkan\ pada\ main\ method\r\n
 numComments=8

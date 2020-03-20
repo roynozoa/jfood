@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
  * Kelas Customer berguna untuk menyimpan data pembeli
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (19/03/2020)
+ * @version (20/03/2020)
  */
 public class Customer {
     //merupakan field dari kelas Customer
@@ -22,25 +22,26 @@ public class Customer {
     public Customer(int id, String name, String email, String password, Calendar joinDate) {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        setEmail(email);
+        setPassword(password);
         this.joinDate = joinDate;
     }
     
     public Customer(int id, String name, String email, String password, int year, int month, int dayOfMonth) {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        setEmail(email);
+        setPassword(password);
         this.joinDate = new GregorianCalendar(year, month - 1, dayOfMonth);
+        setJoinDate(Calendar.getInstance());
         
     }
     
     public Customer(int id, String name, String email, String password) {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        setEmail(email);
+        setPassword(password);
         
     }
     
@@ -133,8 +134,6 @@ public class Customer {
         else {
             this.email = " ";
         }
-        
-        
     }
     
     /**
@@ -144,14 +143,14 @@ public class Customer {
      * @param    password customer
      */
     public void setPassword(String password){
-        String passwordChecker = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\\d]{6,}$";
+        String passwordChecker = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$";
         Pattern checkPassword = Pattern.compile(passwordChecker);
         Matcher passwordMatcher = checkPassword.matcher(password);
         if (passwordMatcher.find() ){
             this.password = password;
         }
         else {
-            this.password = null;
+            this.password = " ";
         }
         
 

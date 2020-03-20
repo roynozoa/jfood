@@ -5,6 +5,10 @@
  * @author (Muhammad Adisatriyo Pratama)
  * @version (12/03/2020)
  */
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
 
 public class CashlessInvoice extends Invoice{
     //field kelas
@@ -14,15 +18,15 @@ public class CashlessInvoice extends Invoice{
     /**
      * Constructor 1 kelas CashlessInvoice (tanpa promo)
      */
-    public CashlessInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus){
-        super(id, food, date, customer, invoiceStatus);
+    public CashlessInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus){
+        super(id, food, customer, invoiceStatus);
     }
     
     /**
      * Constructor 2 kelas CashlessInvoice (dengan promo)
      */
-    public CashlessInvoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus, Promo promo){
-        super(id, food, date, customer, invoiceStatus);
+    public CashlessInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus, Promo promo){
+        super(id, food, customer, invoiceStatus);
         this.promo = promo;
     }
     
@@ -72,21 +76,31 @@ public class CashlessInvoice extends Invoice{
     
     
     /**
-     * method printData yang dapat ditampilkan pada main method
+     * method toString yang dapat ditampilkan pada main method
      */
-    public void printData(){
+    public String toString(){
+        SimpleDateFormat formatDate = new SimpleDateFormat ("dd MMMM yyyy");
         setTotalPrice();
-        System.out.println("==========INVOICE==========");
-        System.out.println("ID: "+ super.getId());
-        System.out.println("Food: " + getFood().getName());
-        System.out.println("Date: " + super.getDate());
-        System.out.println("Customer: " + getCustomer().getName());
-        System.out.println("Total Price: " + getTotalPrice());
-        System.out.println("Payment Type: " + getPaymentType());
+        
         if (promo!= null && getPromo().getActive() == true && getFood().getPrice() > getPromo().getMinPrice() ){
-            System.out.println("Promo: "+ getPromo().getCode());
-        } 
-        System.out.println();
+        return String.format("==========INVOICE CASHLESS==========" + "\n" +
+                            "Id=" + getId() + "\n" + 
+                            "Food=" + getFood().getName() + "\n" + 
+                            "Date=" + formatDate.format(getDate().getTime()) + "\n" +
+                            "Customer=" + getCustomer().getName() + "\n" +
+                            "Total Price=" + getTotalPrice() + "\n" +
+                            "Payment Type=" + getPaymentType() + "\n" +
+                            "Delivery Fee=" + getPromo().getCode());
+        } else {
+        return String.format("==========INVOICE CASHLESS==========" + "\n" +
+                            "Id=" + getId() + "\n" + 
+                            "Food=" + getFood().getName() + "\n" + 
+                            "Date=" + formatDate.format(getDate().getTime()) + "\n" +
+                            "Customer=" + getCustomer().getName() + "\n" +
+                            "Total Price=" + getTotalPrice() + "\n" +
+                            "Payment Type=" + getPaymentType());
+        
+        }
     }
-   
+    
 }

@@ -1,4 +1,10 @@
 //komen
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+
+    
 /**
  * Kelas Invoice berguna untuk menyimpan data invoice
  *
@@ -11,7 +17,7 @@ abstract class Invoice{
     
     private int id;
     private Food food;
-    private String date;
+    private Calendar date;
     protected int totalPrice;
     private Customer customer;
     private InvoiceStatus invoiceStatus;
@@ -19,10 +25,10 @@ abstract class Invoice{
     /**
      * Constructor kelas Invoice
      */
-    public Invoice(int id, Food food, String date, Customer customer, InvoiceStatus invoiceStatus){
+    public Invoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus){
         this.id = id;
         this.food = food;
-        this.date = date;
+        setDate(Calendar.getInstance());
         this.totalPrice = totalPrice;
         this.customer = customer;
         this.invoiceStatus = invoiceStatus;
@@ -54,7 +60,8 @@ abstract class Invoice{
      * 
      * @return   tanggal invoice
      */
-    public String getDate(){
+    public Calendar getDate(){
+        
         return this.date;
     }
     
@@ -120,8 +127,12 @@ abstract class Invoice{
      * 
      * @param    tanggal invoice
      */
-    public void setDate(String date){
+    public void setDate(Calendar date){
         this.date = date;
+    }
+    
+    public void setDate(int year, int month, int dayOfMonth){
+        this.date = new GregorianCalendar(year, month - 1, dayOfMonth);
     }
     
     /**
@@ -154,12 +165,12 @@ abstract class Invoice{
     }
     
     /**
-     * Metode printData untuk menampilkan nama penjual
+     * Metode toString untuk menampilkan data
      *
      * 
      * 
      */
-    public abstract void printData();
+    //public abstract void toString();
         
     
     
