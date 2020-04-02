@@ -68,11 +68,13 @@ public class CashlessInvoice extends Invoice{
     public void setTotalPrice(){
         for(Food foodList : getFoods())
         {
-            if (promo!= null  && getPromo().getActive() == true && foodList.getPrice() > getPromo().getMinPrice()){
-                totalPrice += foodList.getPrice() - getPromo().getDiscount();
-            } else{
-                this.totalPrice += foodList.getPrice();
-            }
+            totalPrice += foodList.getPrice();
+        }
+        if (promo!= null  && getPromo().getActive() == true && totalPrice > getPromo().getMinPrice()){
+
+            totalPrice = totalPrice - getPromo().getDiscount();
+        } else{
+            this.totalPrice = totalPrice;
         }
 
         

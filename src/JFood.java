@@ -4,7 +4,6 @@ public class JFood
 {
     public static void main(String[] args){
         Location lokasi = new Location("Jakarta Timur", "DKI Jakarta", "Lokasi jajan gorengan");
-        //Seller tukangGorengan = new Seller(003, "Muhammad Adisatriyo Pratama","muhammad.adisatriyo@ui.ac.id", "081297449833", lokasi);
 
         DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "Muhammad Adisatriyo Pratama","muhammad.adisatriyo@ui.ac.id", "081297449833", lokasi));
 
@@ -25,12 +24,12 @@ public class JFood
         }
         
         //Testing setTotalPrice
-//        Promo promoCashback = new Promo(001, "Promo Cashback", 5000, 20000, true);
-//        Invoice strukSatu = new CashlessInvoice(001, DatabaseFood.getFoodDatabase(), DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing, promoCashback);
-//        Invoice strukDua = new CashInvoice(001, DatabaseFood.getFoodDatabase(), DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing);
-//
-//        System.out.println(strukSatu.toString());
-//        System.out.println(strukDua.toString());
+        Promo promoCashback = new Promo(001, "Promo Cashback", 5000, 20000, true);
+        Invoice strukSatu = new CashlessInvoice(001, DatabaseFood.getFoodDatabase(), DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing, promoCashback);
+        Invoice strukDua = new CashInvoice(001, DatabaseFood.getFoodDatabase(), DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing);
+
+        System.out.println(strukSatu.toString());
+        System.out.println(strukDua.toString());
 
     }
 }
