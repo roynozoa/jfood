@@ -7,6 +7,7 @@
  * @version (13/03/2020)
  */
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -20,15 +21,15 @@ public class CashInvoice extends Invoice{
     /**
      * Constructor 1 kelas CashlessInvoice (tanpa ongkir)
      */
-    public CashInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus){
-        super(id, food, customer, invoiceStatus);
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus){
+        super(id, foods, customer, invoiceStatus);
     }
     
     /**
      * Constructor 2 kelas CashlessInvoice (dengan ongkir)
      */
-    public CashInvoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus, int deliveryFee){
-        super(id, food, customer, invoiceStatus);
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus, int deliveryFee){
+        super(id, foods, customer, invoiceStatus);
         this.deliveryFee = deliveryFee;
     }
     
@@ -54,7 +55,7 @@ public class CashInvoice extends Invoice{
      * Metode setDeliveryFee untuk mengatur nilai ongkir yang ada
      *
      * 
-     * @param    nilai ongkir
+     * @param    /nilai ongkir
      */
     public void setDeliveryFee(int deliveryFee){
         this.deliveryFee = deliveryFee;
@@ -67,12 +68,15 @@ public class CashInvoice extends Invoice{
      * 
      */
     public void setTotalPrice(){
-        
-        if (deliveryFee != 0){
-            totalPrice = getFood().getPrice() + getDeliveryFee();
-        } else{
-            totalPrice = getFood().getPrice();
+        for(Food foodList : getFoods())
+        {
+            if (deliveryFee != 0){
+                totalPrice += foodList.getPrice() + getDeliveryFee();
+            } else{
+                totalPrice += foodList.getPrice();
+            }
         }
+
         
     }
     
@@ -83,10 +87,15 @@ public class CashInvoice extends Invoice{
     public String toString(){
         SimpleDateFormat formatDate = new SimpleDateFormat ("dd MMMM yyyy");
         setTotalPrice();
+        String listMakanan = "";
+        for (Food food : getFoods())
+        {
+            listMakanan += food.getName() + ", ";
+        }
         if (deliveryFee != 0){
         return String.format("==========INVOICE CASH==========" + "\n" +
-                            "Id=" + getId() + "\n" + 
-                            "Food=" + getFood().getName() + "\n" + 
+                            "Id=" + getId() + "\n" +
+                            "Food=" + listMakanan + "\n" +
                             "Date=" + formatDate.format(getDate().getTime()) + "\n" +
                             "Customer=" + getCustomer().getName() + "\n" +
                             "Total Price=" + getTotalPrice() + "\n" +
@@ -94,14 +103,15 @@ public class CashInvoice extends Invoice{
                             "Delivery Fee=" + getDeliveryFee() + "\n");
         } else {
         return String.format("==========INVOICE CASH==========" + "\n" +
-                            "Id=" + getId() + "\n" + 
-                            "Food=" + getFood().getName() + "\n" + 
+                            "Id=" + getId() + "\n" +
+                            "Food=" + listMakanan + "\n" +
                             "Date=" + formatDate.format(getDate().getTime()) + "\n" +
                             "Customer=" + getCustomer().getName() + "\n" +
                             "Total Price=" + getTotalPrice() + "\n" +
                             "Payment Type=" + getPaymentType()+ "\n");
-        
+
         }
+
     }
     
 }

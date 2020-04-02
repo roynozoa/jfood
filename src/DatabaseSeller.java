@@ -5,41 +5,49 @@
  * @author (Muhammad Adisatriyo Pratama)
  * @version (3.0 05/03/2020)
  */
+import java.util.ArrayList;
+
 public class DatabaseSeller
 {
-    private static String[] listSeller;
-    
-    /**
-     * Method untuk menambahkan seller
-     * 
-     * @return true
-     */
-    public static boolean addSeller(Seller seller){
-        return true;
+    private static ArrayList<Seller> SELLER_DATABASE = new ArrayList<>();
+    private static int lastId = 0;
+
+    public static ArrayList<Seller> getSellerDatabase(){
+        return SELLER_DATABASE;
     }
-    
-    
-    /**
-     * Method untuk menghapus seller
-     * @return false
-     */
-    public static boolean removeSeller(Seller seller){
-        return false;
+
+    public static int getLastId(){
+        return lastId;
     }
-    
-    /**
-     * Method getSeller untuk mengambil data seller
-     * @return null
-     */
-    public static Seller getSeller(){
+
+    public static Seller getSellerById(int id){
+        for (Seller sell : SELLER_DATABASE){
+            if(sell.getId() == id){
+                return sell;
+            }
+
+        }
         return null;
     }
-    
-    /**
-     * Method getListSeller untuk mengambil data list seller
-     * @return listSeller
-     */
-    public static String[] getListSeller(){
-        return listSeller;
+    public static boolean addSeller(Seller seller){
+
+//        for(Seller sell : SELLER_DATABASE){
+//
+//        }
+        SELLER_DATABASE.add(seller);
+        lastId = seller.getId();
+        return true;
+
     }
+
+    public static boolean removeSeller(int id){
+        for(Seller sell : SELLER_DATABASE){
+            if(sell.getId()==id){
+                SELLER_DATABASE.remove(sell);
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e405d429-8b6a-40e6-847c-94353e502013" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectId" id="1ZvDCWIG1ac7lzoHqGT2xF5e2TE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java Project\jfood" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java Project\jfood\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="JFood" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JFood" />
+      <module name="jfood" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e405d429-8b6a-40e6-847c-94353e502013" name="Default Changelist" comment="" />
+      <created>1585710547321</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585710547321</updated>
+      <workItem from="1585710549690" duration="41000" />
+      <workItem from="1585710603875" duration="106000" />
+      <workItem from="1585710744034" duration="98000" />
+      <workItem from="1585710887935" duration="58000" />
+      <workItem from="1585710962881" duration="63000" />
+      <workItem from="1585816763736" duration="12377000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#Project_Structure" timestamp="1585710579197">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Project_Structure/1920.306.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1585710579197" />
+    <state width="644" height="912" key="GridCell.Tab.0.bottom" timestamp="1585829150949">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="644" height="912" key="GridCell.Tab.0.bottom/1920.306.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1585829150949" />
+    <state width="644" height="912" key="GridCell.Tab.0.center" timestamp="1585829150949">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="644" height="912" key="GridCell.Tab.0.center/1920.306.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1585829150949" />
+    <state width="644" height="912" key="GridCell.Tab.0.left" timestamp="1585829150949">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="644" height="912" key="GridCell.Tab.0.left/1920.306.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1585829150949" />
+    <state width="644" height="912" key="GridCell.Tab.0.right" timestamp="1585829150949">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="644" height="912" key="GridCell.Tab.0.right/1920.306.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1585829150949" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1585824702774">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/1920.306.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1585824702774" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1585819961175">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/1920.306.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1585819961175" />
+  </component>
+</project>

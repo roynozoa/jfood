@@ -1,30 +1,36 @@
-import java.util.Calendar;  
+import java.util.ArrayList;
+import java.util.Calendar;
 public class JFood
 {
     public static void main(String[] args){
-        Calendar tanggal = Calendar.getInstance();
-        //CS
-        Customer pembeliSatu = new Customer(001, "Satu", "email salah", "password salah", tanggal);
-        Customer pembeliDua = new Customer(002, "Dua", "email@pembeli.com", "P@sswordModul5",2020, 3, 12);
-        Customer pembeliTiga = new Customer(003, "Tiga", "email@pembeli.com", "P@sswordModul5");
-   
-        System.out.println(pembeliSatu.toString());
-        System.out.println(pembeliDua.toString());
-        System.out.println(pembeliTiga.toString());
-        
-        pembeliSatu.setEmail("email@pembelisatu.com");
-        pembeliSatu.setPassword("P@sswordModul5");
-        System.out.println(pembeliSatu.toString());
-        
-        //Post Test
         Location lokasi = new Location("Jakarta Timur", "DKI Jakarta", "Lokasi jajan gorengan");
-        Seller tukangGorengan = new Seller(003, "Muhammad Adisatriyo Pratama","muhammad.adisatriyo@ui.ac.id", "081297449833", lokasi);
-        Promo promoCashback = new Promo(001, "Promo Cashback", 5000, 20000, true);
-        Food gorengan = new Food(002,"Gorengan",tukangGorengan, 25000, FoodCategory.Snacks);
-        Invoice strukSatu = new CashlessInvoice(001, gorengan, pembeliDua, InvoiceStatus.Ongoing, promoCashback);
-        Invoice strukDua = new CashInvoice(001, gorengan, pembeliDua, InvoiceStatus.Ongoing);
+        //Seller tukangGorengan = new Seller(003, "Muhammad Adisatriyo Pratama","muhammad.adisatriyo@ui.ac.id", "081297449833", lokasi);
+
+        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "Muhammad Adisatriyo Pratama","muhammad.adisatriyo@ui.ac.id", "081297449833", lokasi));
+
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId()+1,"Muhammad Adisatriyo", "muhammad.adisatriyo@ui.ac.id", "P@sswordModul6", Calendar.getInstance()));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId()+1,"Muhammad Adisatriyo", "muhammad.adisatriyo@ui.ac.id", "P@sswordModul6", Calendar.getInstance()));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId()+1,"Bang Fadel", "emailbangfadel@email.com", "P@sswordModul6", Calendar.getInstance()));
+
+        for (Customer cust : DatabaseCustomer.getCustomerDatabase()) {
+            System.out.println(cust.toString());
+        }
+
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1,"Cireng", DatabaseSeller.getSellerById(1), 25000, FoodCategory.Snacks));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1,"Bakwan", DatabaseSeller.getSellerById(1), 25000, FoodCategory.Snacks));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId()+1,"Roti", DatabaseSeller.getSellerById(1), 25000, FoodCategory.Bakery));
+
+        for (Food food : DatabaseFood.getFoodDatabase()) {
+            System.out.println(food.toString());
+        }
         
-        System.out.println(strukSatu.toString());
-        System.out.println(strukDua.toString());
+        //Testing setTotalPrice
+//        Promo promoCashback = new Promo(001, "Promo Cashback", 5000, 20000, true);
+//        Invoice strukSatu = new CashlessInvoice(001, DatabaseFood.getFoodDatabase(), DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing, promoCashback);
+//        Invoice strukDua = new CashInvoice(001, DatabaseFood.getFoodDatabase(), DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing);
+//
+//        System.out.println(strukSatu.toString());
+//        System.out.println(strukDua.toString());
+
     }
 }

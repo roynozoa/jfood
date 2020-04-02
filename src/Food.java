@@ -95,7 +95,7 @@ public class Food{
      * Metode setName untuk mengatur nama makanan
      *
      * 
-     * @param    nama makanan
+     * @param    /nama makanan
      */
     public void setName(String name){
         this.name = name;
@@ -105,7 +105,7 @@ public class Food{
      * Metode setSeller untuk mengatur info penjual makanan
      *
      * 
-     * @param    penjual makanan
+     * @param    /penjual makanan
      */
     public void setSeller(Seller seller){
         this.seller = seller;
@@ -115,7 +115,7 @@ public class Food{
      * Metode setPrice untuk mengatur harga makanan
      *
      * 
-     * @param    harga makanan
+     * @param    /harga makanan
      */
     public void setPrice(int price){
         this.price = price;
@@ -125,35 +125,20 @@ public class Food{
      * Metode setCategory untuk mengatur kategori makanan
      *
      * 
-     * @param    kategori makanan
+     * @param    /kategori makanan
      */
     public void setCategory(FoodCategory category){
         this.category = category;
     }
     
     public String toString(){
-        return String.format("Id=" + getId() + "\n" + 
+        return String.format("==========FOOD=========="+ "\n"+
+                            "Id=" + getId() + "\n" +
                             "Nama=" + getName() + "\n" + 
                             "Seller=" + seller.getName() + "\n" +
                             "City=" + seller.getLocation().getCity() + "\n" +
                             "Price=" + getPrice() + "\n" +
-                            "Category=" + getCategory());
+                            "Category=" + getCategory()+ "\n");
     }
-    /*
-    /**
-     * Metode printData untuk menampilkan nama penjual
-     *
-     * 
-     * 
-    
-    public void printData(){
-        System.out.println("==========FOOD==========");
-        System.out.println("ID: "+ id);
-        System.out.println("Name: "+ name);
-        System.out.println("Seller: "+ seller.getName());
-        System.out.println("City: "+ seller.getLocation().getCity());
-        System.out.println("Price: "+ price);
-        System.out.println("Category: "+ category);
-    }
-     */
+
 }

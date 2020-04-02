@@ -3,6 +3,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
     
 /**
@@ -16,7 +17,7 @@ abstract class Invoice{
     //field Invoice
     
     private int id;
-    private Food food;
+    private ArrayList<Food> foods;
     private Calendar date;
     protected int totalPrice;
     private Customer customer;
@@ -25,9 +26,9 @@ abstract class Invoice{
     /**
      * Constructor kelas Invoice
      */
-    public Invoice(int id, Food food, Customer customer, InvoiceStatus invoiceStatus){
+    public Invoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus){
         this.id = id;
-        this.food = food;
+        this.foods = foods;
         setDate(Calendar.getInstance());
         this.totalPrice = totalPrice;
         this.customer = customer;
@@ -50,8 +51,8 @@ abstract class Invoice{
      * 
      * @return   id makanan invoice
      */
-    public Food getFood(){
-        return this.food;
+    public ArrayList<Food> getFoods(){
+        return this.foods;
     }
     
     /**
@@ -112,20 +113,20 @@ abstract class Invoice{
     }
     
     /**
-     * Metode setIdFood untuk mengatur id makanan
+     * Metode setFoods untuk mengatur makanan
      *
      * 
-     * @param    id makanan
+     * @param /id makanan
      */
-    public void setFood(Food idFood){
-        this.food = food;
+    public void setFoods(ArrayList<Food> foods){
+        this.foods = foods;
     }
     
     /**
      * Metode setDate untuk mengatur tanggal invoice
      *
      * 
-     * @param    tanggal invoice
+     * @param    /tanggal invoice
      */
     public void setDate(Calendar date){
         this.date = date;
@@ -158,7 +159,7 @@ abstract class Invoice{
      * Metode setInvoiceStatus untuk mengatur status invoice
      *
      * 
-     * @param    status invoice
+     * @param    /status invoice
      */
     public void setInvoiceStatus(InvoiceStatus invoiceStatus){
         this.invoiceStatus = invoiceStatus;

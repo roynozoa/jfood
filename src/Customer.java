@@ -113,7 +113,7 @@ public class Customer {
      * Metode setName untuk mengatur nama customer
      *
      * 
-     * @param    nama customer
+     * @param    /nama customer
      */
     public void setName(String name){
         this.name = name;
@@ -162,7 +162,7 @@ public class Customer {
      * Metode setJoinDate untuk mengatur tanggal bergabung customer
      *
      * 
-     * @param    tanggal bergabung customer
+     * @param    /tanggal bergabung customer
      */
     public void setJoinDate(Calendar joinDate){
         this.joinDate = joinDate;
