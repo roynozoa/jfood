@@ -31,9 +31,6 @@ public class DatabaseSeller
     }
     public static boolean addSeller(Seller seller){
 
-//        for(Seller sell : SELLER_DATABASE){
-//
-//        }
         SELLER_DATABASE.add(seller);
         lastId = seller.getId();
         return true;

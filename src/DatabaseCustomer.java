@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Kelas databaseceller berguna untuk menyimpan database pembeli
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 05/03/2020)
+ * @version (04/03/2020)
  */
 public class DatabaseCustomer{
     private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();

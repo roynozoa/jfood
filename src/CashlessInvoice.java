@@ -86,7 +86,7 @@ public class CashlessInvoice extends Invoice{
      */
     public String toString(){
         SimpleDateFormat formatDate = new SimpleDateFormat ("dd MMMM yyyy");
-        setTotalPrice();
+        //setTotalPrice();
         String listMakanan = "";
         for (Food food : getFoods())
         {

@@ -31,26 +31,23 @@ public class DatabaseFood{
     }
 
     public static ArrayList<Food> getFoodBySeller(int sellerId){
+        ArrayList<Food> LIST_FOOD_BY_SELLER = new ArrayList<Food>();
         for(Food food : FOOD_DATABASE){
             if(food.getSeller().getId() == sellerId){
-                ArrayList<Food> listFoodBySeller=new ArrayList<Food>();
-                listFoodBySeller.add(food);
-                return listFoodBySeller;
+                LIST_FOOD_BY_SELLER.add(food);
 
             }
         }
-        return null;
+        return LIST_FOOD_BY_SELLER;
     }
     public static ArrayList<Food> getFoodByCategory(FoodCategory category){
+        ArrayList<Food> LIST_FOOD_BY_CATEGORY = new ArrayList<Food>();
         for(Food food : FOOD_DATABASE){
             if(food.getCategory() == category){
-                ArrayList<Food> listFoodByCategory=new ArrayList<Food>();
-                listFoodByCategory.add(food);
-                return listFoodByCategory;
-
+                LIST_FOOD_BY_CATEGORY.add(food);
             }
         }
-        return null;
+        return LIST_FOOD_BY_CATEGORY;
     }
 
     public static boolean addFood(Food food){
