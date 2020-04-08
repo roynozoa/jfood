@@ -63,21 +63,14 @@ public class Promo{
     }
     
     public String toString(){
-        return String.format("Id=" + getId() + "\n" + 
-                            "Code=" + getCode() + "\n" + 
-                            "Discount=" + getDiscount() + "\n" +
-                            "MinPrice=" + getMinPrice() + "\n" +
-                            getActive());
+        return String.format("==========PROMO==========" + "\n" +
+                            "Id = " + getId() + "\n" +
+                            "Code = " + getCode() + "\n" +
+                            "Discount = " + getDiscount() + "\n" +
+                            "Minimal Price = " + getMinPrice() + "\n" +
+                            "Status Active = " + getActive() + "\n");
     }
     
-    /*
-    public void printData(){
-        System.out.println(id);
-        System.out.println(code);
-        System.out.println(discount);
-        System.out.println(minPrice);
-        System.out.println(active);
-    }
-    */
+
     
 }

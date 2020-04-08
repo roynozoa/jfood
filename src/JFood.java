@@ -26,51 +26,71 @@ public class JFood
             System.out.println(food.toString());
         }
 
-        System.out.println("=====POST TEST MODUL 6=====");
-        Promo promoCashback = new Promo(001, "Promo Cashback", 5000, 20000, false);
-        Promo promoCashbackDua = new Promo(002, "Promo Cashback", 5000, 20000, true);
 
-        System.out.println(promoCashback.toString());
-        System.out.println(promoCashbackDua.toString());
+
+        System.out.println("=====POST TEST MODUL 6=====");
+        DatabasePromo.addPromo(new Promo(001, "Promo Cashback", 10000, 20000, false));
+        DatabasePromo.addPromo(new Promo(002, "Promo Cashback", 10000, 20000, true));
+
+        for(Promo promo : DatabasePromo.getPromoDatabase()){
+            System.out.println(promo.toString());
+        }
 
         ArrayList<Food> LIST_FOOD_SATU = new ArrayList<>();
         LIST_FOOD_SATU.add(DatabaseFood.getFoodById(1));
 
         ArrayList<Food> LIST_FOOD_DUA = new ArrayList<>();
         LIST_FOOD_DUA.add(DatabaseFood.getFoodById(1));
+        LIST_FOOD_DUA.add(DatabaseFood.getFoodById(3));
 
         DatabaseInvoice.addInvoice(new CashInvoice(DatabaseInvoice.getLastId()+1, LIST_FOOD_SATU, DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing, 1));
 
         for (Invoice invoice : DatabaseInvoice.getInvoiceByCustomer(1))
         {
-            invoice.setTotalPrice();
+            if (invoice.totalPrice == 0)
+            {
+                invoice.setTotalPrice();
+            }
         }
 
-
-        DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, LIST_FOOD_SATU, DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing, promoCashback));
+        DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, LIST_FOOD_SATU, DatabaseCustomer.getCustomerById(1), InvoiceStatus.Ongoing, DatabasePromo.getPromoByCode("Promo Cashback")));
 
         for (Invoice invoice : DatabaseInvoice.getInvoiceByCustomer(1))
         {
-            invoice.setTotalPrice();
+            if (invoice.totalPrice == 0)
+            {
+                invoice.setTotalPrice();
+            }
         }
 
+
+        System.out.println("INVOICE LIST 1");
         for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase())
         {
             System.out.println(invoice.toString());
         }
 
-        DatabaseInvoice.changeInvoiceStatus(1, InvoiceStatus.Finished);
+        for (Invoice invoice : DatabaseInvoice.getInvoiceByCustomer(1))
+        {
+            invoice.setInvoiceStatus(InvoiceStatus.Finished);
+        }
 
-        DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, LIST_FOOD_SATU, DatabaseCustomer.getCustomerById(2), InvoiceStatus.Ongoing, promoCashback));
+        DatabaseInvoice.addInvoice(new CashlessInvoice(DatabaseInvoice.getLastId()+1, LIST_FOOD_DUA, DatabaseCustomer.getCustomerById(2), InvoiceStatus.Ongoing, DatabasePromo.getPromoByCode("Promo Cashback")));
 
-        promoCashback.setActive(true);
-        promoCashbackDua.setActive(false);
+        for (Promo promo : DatabasePromo.getPromoDatabase())
+        {
+            promo.setActive(true);
+        }
 
         for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase())
         {
-            invoice.setTotalPrice();
+            if (invoice.totalPrice == 0)
+            {
+                invoice.setTotalPrice();
+            }
         }
 
+        System.out.println("INVOICE LIST 2");
         for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase())
         {
             System.out.println(invoice.toString());

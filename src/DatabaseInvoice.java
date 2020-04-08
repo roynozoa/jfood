@@ -21,10 +21,11 @@ public class DatabaseInvoice {
         return null;
     }
 
-    public static ArrayList<Invoice> getInvoiceByCustomer(int customerid){
-        ArrayList<Invoice> LIST_INVOICE_BY_CUSTOMER = new ArrayList<Invoice>();
+    public static ArrayList<Invoice> getInvoiceByCustomer(int customerId){
+        ArrayList<Invoice> LIST_INVOICE_BY_CUSTOMER = new ArrayList<>();
+        Customer customer = DatabaseCustomer.getCustomerById(customerId);
         for(Invoice invoice : INVOICE_DATABASE){
-            if(invoice.getCustomer().getId() == customerid){
+            if(customer.equals(invoice.getCustomer())){
                 LIST_INVOICE_BY_CUSTOMER.add(invoice);
             }
         }
@@ -32,21 +33,22 @@ public class DatabaseInvoice {
     }
 
     public static boolean addInvoice(Invoice invoice){
+        int customerId = invoice.getCustomer().getId();
         for(Invoice struk : INVOICE_DATABASE){
-            if(struk.getInvoiceStatus() != InvoiceStatus.Ongoing){
-                INVOICE_DATABASE.add(invoice);
-                lastId = struk.getId();
-                return true;
+            if(struk.getCustomer().getId() == customerId && struk.getInvoiceStatus() == InvoiceStatus.Ongoing){
+                return false;
             }
         }
-        return false;
+        INVOICE_DATABASE.add(invoice);
+        lastId = invoice.getId();
+        return true;
 
     }
 
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
-        for(Invoice struk : INVOICE_DATABASE){
-            if(struk.getInvoiceStatus() == InvoiceStatus.Ongoing && struk.getId() == id){
-                struk.setInvoiceStatus(invoiceStatus);
+        for(Invoice invoice : INVOICE_DATABASE){
+            if(invoice.getInvoiceStatus() == InvoiceStatus.Ongoing && invoice.getId() == id){
+                invoice.setInvoiceStatus(invoiceStatus);
                 return true;
             }
         }
@@ -54,9 +56,9 @@ public class DatabaseInvoice {
     }
 
     public static boolean removeInvoice(int id){
-        for(Invoice struk : INVOICE_DATABASE){
-            if(struk.getId()== id){
-                INVOICE_DATABASE.remove(struk);
+        for(Invoice invoice : INVOICE_DATABASE){
+            if(invoice.getId()== id){
+                INVOICE_DATABASE.remove(invoice);
                 return true;
             }
         }

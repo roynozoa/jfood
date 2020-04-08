@@ -74,7 +74,7 @@ public class CashInvoice extends Invoice{
 
         }
         if (deliveryFee != 0){
-            totalPrice = totalPrice + getDeliveryFee();
+            totalPrice += getDeliveryFee();
         } else{
             totalPrice = totalPrice;
         }
