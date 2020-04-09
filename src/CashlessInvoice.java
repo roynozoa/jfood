@@ -3,7 +3,7 @@
  * Kelas ini berfungsi untuk menampilkan invoice bertipe cashless
  * 
  * @author (Muhammad Adisatriyo Pratama)
- * @version (12/03/2020)
+ * @version (9/4/2020)
  */
 import java.util.Calendar;
 import java.util.Date;
@@ -100,7 +100,8 @@ public class CashlessInvoice extends Invoice{
                             "Customer=" + getCustomer().getName() + "\n" +
                             "Total Price=" + getTotalPrice() + "\n" +
                             "Payment Type=" + getPaymentType() + "\n" +
-                            "Delivery Fee=" + getPromo().getCode() + "\n");
+                            "Status=" + getInvoiceStatus() + "\n" +
+                            "Promo=" + getPromo().getCode() + "\n");
         } else {
         return String.format("==========INVOICE CASHLESS==========" + "\n" +
                             "Id=" + getId() + "\n" +
@@ -108,9 +109,30 @@ public class CashlessInvoice extends Invoice{
                             "Date=" + formatDate.format(getDate().getTime()) + "\n" +
                             "Customer=" + getCustomer().getName() + "\n" +
                             "Total Price=" + getTotalPrice() + "\n" +
-                            "Payment Type=" + getPaymentType() + "\n");
+                            "Payment Type=" + getPaymentType() + "\n" +
+                            "Status=" + getInvoiceStatus() + "\n");
 
         }
     }
-    
+
+
+
+
+    public void start() {
+        for(Food food : getFoods())
+        {
+            totalPrice += food.getPrice();
+        }
+        if (promo!= null  && getPromo().getActive() == true && totalPrice > getPromo().getMinPrice()){
+
+            totalPrice = totalPrice - getPromo().getDiscount();
+        } else{
+            this.totalPrice = totalPrice;
+        }
+    }
+
+    @Override
+    public void run() {
+
+    }
 }

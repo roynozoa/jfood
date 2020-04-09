@@ -1,16 +1,17 @@
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.text.SimpleDateFormat;  
 
 /**
  * Kelas Customer berguna untuk menyimpan data pembeli
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (20/03/2020)
+ * @version (9/4/2020)
  */
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.text.SimpleDateFormat;
+
 public class Customer {
     //merupakan field dari kelas Customer
     private int id;

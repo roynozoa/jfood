@@ -2,7 +2,7 @@
  * Kelas Location berguna untuk menyimpan alamat
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 05/03/2020)
+ * @version (9/4/2020)
  */
 
 public class Location{

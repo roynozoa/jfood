@@ -1,9 +1,8 @@
-
 /**
- * Write a description of class InvoiceStatus here.
+ * Kelas InvoiceStatus berguna untuk menyimpan data status invoice
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Muhammad Adisatriyo Pratama)
+ * @version (9/4/2020)
  */
 public enum InvoiceStatus
 {

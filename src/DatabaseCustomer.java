@@ -1,12 +1,17 @@
-import java.util.ArrayList;
+
 
 /**
  * Kelas databaseceller berguna untuk menyimpan database pembeli
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (04/03/2020)
+ * @version (9/4/2020)
  */
+
+import java.util.ArrayList;
+
+
 public class DatabaseCustomer{
+
     private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();
     private static int lastId = 0;
 
@@ -18,19 +23,19 @@ public class DatabaseCustomer{
         return lastId;
     }
 
-    public static Customer getCustomerById(int id){
+    public static Customer getCustomerById(int id) throws CustomerNotFoundException {
         for(Customer customer : CUSTOMER_DATABASE){
             if(customer.getId() == id){
                 return customer;
             }
         }
-        return null;
+        throw new CustomerNotFoundException(id);
     }
 
-    public static boolean addCustomer(Customer customer){
+    public static boolean addCustomer(Customer customer) throws EmailAlreadyExistsException{
         for(Customer cust : CUSTOMER_DATABASE){
             if(cust.getEmail() == customer.getEmail()){
-                return false;
+                throw new EmailAlreadyExistsException(customer);
             }
         }
         CUSTOMER_DATABASE.add(customer);
@@ -38,14 +43,14 @@ public class DatabaseCustomer{
         return true;
     }
 
-    public static boolean removeCustomer(int id){
+    public static boolean removeCustomer(int id) throws CustomerNotFoundException {
         for(Customer customer : CUSTOMER_DATABASE){
             if(customer.getId() == id){
                 CUSTOMER_DATABASE.remove(customer);
                 return true;
             }
         }
-        return false;
+        throw new CustomerNotFoundException(id);
     }
 
 

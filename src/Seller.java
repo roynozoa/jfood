@@ -1,9 +1,8 @@
-//komen
 /**
  * Kelas Seller berguna untuk menyimpan data penjual
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 05/03/2020)
+ * @version (9/4/2020)
  */
 public class Seller{
     //merupakan field dari kelas Seller

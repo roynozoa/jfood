@@ -4,7 +4,7 @@
  * Kelas ini berfungsi untuk menampilkan invoice bertipe cash
  * 
  * @author (Muhammad Adisatriyo Pratama)
- * @version (13/03/2020)
+ * @version (9/4/2020)
  */
 
 import java.util.ArrayList;
@@ -81,8 +81,10 @@ public class CashInvoice extends Invoice{
 
         
     }
-    
-    
+
+
+
+
     /**
      * method toString yang dapat ditampilkan pada main method
      */
@@ -102,6 +104,7 @@ public class CashInvoice extends Invoice{
                             "Customer=" + getCustomer().getName() + "\n" +
                             "Total Price=" + getTotalPrice() + "\n" +
                             "Payment Type=" + getPaymentType() + "\n" +
+                            "Status=" + getInvoiceStatus() + "\n" +
                             "Delivery Fee=" + getDeliveryFee() + "\n");
         } else {
         return String.format("==========INVOICE CASH==========" + "\n" +
@@ -110,10 +113,30 @@ public class CashInvoice extends Invoice{
                             "Date=" + formatDate.format(getDate().getTime()) + "\n" +
                             "Customer=" + getCustomer().getName() + "\n" +
                             "Total Price=" + getTotalPrice() + "\n" +
-                            "Payment Type=" + getPaymentType()+ "\n");
+                            "Payment Type=" + getPaymentType()+ "\n" +
+                            "Status=" + getInvoiceStatus() + "\n");
 
         }
 
     }
-    
+
+
+    @Override
+    public void start() {
+        for(Food foodList : getFoods())
+        {
+            totalPrice += foodList.getPrice();
+
+        }
+        if (deliveryFee != 0){
+            totalPrice += getDeliveryFee();
+        } else{
+            totalPrice = totalPrice;
+        }
+    }
+
+    @Override
+    public void run() {
+
+    }
 }

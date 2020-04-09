@@ -3,7 +3,7 @@
  * Kelas berupa eNum yang menyimpan array makanan
  * 
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 05/03/2020)
+ * @version (9/4/2020)
  */
 
 public enum FoodCategory{

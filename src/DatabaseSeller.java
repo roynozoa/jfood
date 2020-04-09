@@ -3,7 +3,7 @@
  * Kelas databaseseller berguna untuk menyimpan database penjual
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 05/03/2020)
+ * @version (9/4/2020)
  */
 import java.util.ArrayList;
 
@@ -20,14 +20,14 @@ public class DatabaseSeller
         return lastId;
     }
 
-    public static Seller getSellerById(int id){
+    public static Seller getSellerById(int id) throws SellerNotFoundException {
         for (Seller sell : SELLER_DATABASE){
             if(sell.getId() == id){
                 return sell;
             }
 
         }
-        return null;
+        throw new SellerNotFoundException(id);
     }
     public static boolean addSeller(Seller seller){
 
@@ -37,14 +37,14 @@ public class DatabaseSeller
 
     }
 
-    public static boolean removeSeller(int id){
+    public static boolean removeSeller(int id) throws SellerNotFoundException {
         for(Seller sell : SELLER_DATABASE){
             if(sell.getId()==id){
                 SELLER_DATABASE.remove(sell);
                 return true;
             }
         }
-        return false;
+        throw new SellerNotFoundException(id);
     }
 
 }

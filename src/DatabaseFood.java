@@ -1,9 +1,8 @@
-
 /**
  * Kelas DatabaseFood berguna untuk menyimpan database makanan
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (3.0 05/03/2020)
+ * @version (9/4/2020)
  */
 import java.util.ArrayList;
 
@@ -21,13 +20,13 @@ public class DatabaseFood{
         return lastId;
     }
 
-    public static Food getFoodById(int id){
+    public static Food getFoodById(int id) throws FoodNotFoundException{
         for(Food food : FOOD_DATABASE){
             if(food.getId() == id){
                 return food;
             }
         }
-        return null;
+        throw new FoodNotFoundException(id);
     }
 
     public static ArrayList<Food> getFoodBySeller(int sellerId){
@@ -58,14 +57,14 @@ public class DatabaseFood{
 
     }
 
-    public static boolean removeFood(int id){
+    public static boolean removeFood(int id) throws FoodNotFoundException{
         for(Food food : FOOD_DATABASE){
             if(food.getId()== id){
                 FOOD_DATABASE.remove(food);
                 return true;
             }
         }
-        return false;
+        throw new FoodNotFoundException(id);
 
     }
 

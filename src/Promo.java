@@ -2,7 +2,7 @@
  * Kelas Promo berguna untuk menyimpan data promo
  *
  * @author (Muhammad Adisatriyo Pratama)
- * @version (12/03/2020)
+ * @version (9/4/2020)
  */
 public class Promo{
     //field Promo

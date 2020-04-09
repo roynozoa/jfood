@@ -1,18 +1,18 @@
-//komen
+/**
+ * Kelas Invoice berguna untuk menyimpan data invoice
+ *
+ * @author (Muhammad Adisatriyo Pratama)
+ * @version (9/4/2020)
+ */
+
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-    
-/**
- * Kelas Invoice berguna untuk menyimpan data invoice
- *
- * @author (Muhammad Adisatriyo Pratama)
- * @version (12/03/2020)
- */
-abstract class Invoice{
+abstract class Invoice implements Runnable{
     
     //field Invoice
     
@@ -164,7 +164,9 @@ abstract class Invoice{
     public void setInvoiceStatus(InvoiceStatus invoiceStatus){
         this.invoiceStatus = invoiceStatus;
     }
-    
+
+    public abstract void start();
+
     /**
      * Metode toString untuk menampilkan data
      *
