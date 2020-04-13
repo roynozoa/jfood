@@ -5,7 +5,7 @@ public class JFood
 {
     public static void main(String[] args) throws FoodNotFoundException, CustomerNotFoundException {
         System.out.println("=====POST TEST MODUL 7=====");
-        //Membuat beberapa objek yang diperlukan untuk mendukung pembuatan objek
+        //Membuat beberapa objek yang diperlukan untuk mendukung pembuatan objek Invoice
         Location lokasi = new Location("Kota Depok", "Jawa Barat", "Lokasi jajan gorengan");
         DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId()+1, "Muhammad Adisatriyo Pratama","muhammad.adisatriyo@ui.ac.id", "081297449833", lokasi));
 
@@ -47,7 +47,7 @@ public class JFood
         } catch (InvoiceNotFoundException e) {
             System.err.println(e.getMessage());
         }
-        System.out.println("YANG MASUK KE DAPATASE INVOICE");
+        System.out.println("YANG MASUK KE DATABASE INVOICE");
         for(Invoice invoice : DatabaseInvoice.getInvoiceDatabase()){
             System.out.println(invoice.toString());
         }
