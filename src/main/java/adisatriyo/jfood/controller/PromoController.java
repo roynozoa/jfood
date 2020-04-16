@@ -15,7 +15,7 @@ public class PromoController {
     }
 
     @RequestMapping(value = "/{code}", method = RequestMethod.GET)
-    public Promo getPromoByCode(@PathVariable String code) {
+    public Promo getPromoByCode(@RequestParam String code) {
         Promo promo = DatabasePromo.getPromoByCode(code);
         return promo;
     }
