@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-abstract class Invoice implements Runnable{
+public abstract class Invoice implements Runnable{
     
     //field Invoice
     

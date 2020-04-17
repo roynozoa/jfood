@@ -24,7 +24,6 @@ public class JFood {
             System.err.println(e.getMessage());
         }
 
-
         SpringApplication.run(JFood.class, args);
     }
 
