@@ -73,7 +73,7 @@ public class InvoiceController {
     @RequestMapping(value = "/createCashInvoice", method = RequestMethod.POST)
     public Invoice addCashInvoice(@RequestParam(value = "foodList") ArrayList<Integer> foodList,
                                   @RequestParam(value = "customerId") int customerId,
-                                  @RequestParam(value = "deliveryFee") int deliveryFee) {
+                                  @RequestParam(value = "deliveryFee",required = false, defaultValue = "0") int deliveryFee) {
 
         ArrayList<Food> LIST_FOOD = new ArrayList<>();
         for(int i : foodList){
@@ -104,7 +104,7 @@ public class InvoiceController {
     @RequestMapping(value = "/createCashlessInvoice", method = RequestMethod.POST)
     public Invoice addCashlessInvoice(@RequestParam(value = "foodList") ArrayList<Integer> foodList,
                                       @RequestParam(value = "customerId") int customerId,
-                                      @RequestParam(value = "promoCode") String promoCode){
+                                      @RequestParam(value = "promoCode", required = false) String promoCode){
 
         ArrayList<Food> LIST_FOOD = new ArrayList<>();
         for(int i : foodList){
