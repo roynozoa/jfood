@@ -49,7 +49,7 @@ public class CashlessInvoice extends Invoice{
      * @retrurn promo
      */
     public Promo getPromo(){
-        return promo;
+        return this.promo;
     }
     
     /**
@@ -73,11 +73,9 @@ public class CashlessInvoice extends Invoice{
         {
             totalPrice += foodList.getPrice();
         }
-        if (promo!= null  && getPromo().getActive() == true && totalPrice > getPromo().getMinPrice()){
+        if (promo!= null  && getPromo().getActive() && totalPrice > getPromo().getMinPrice()){
 
-            totalPrice = totalPrice - getPromo().getDiscount();
-        } else{
-            this.totalPrice = totalPrice;
+            totalPrice = totalPrice - promo.getDiscount();
         }
 
         
