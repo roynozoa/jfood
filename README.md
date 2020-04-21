@@ -1,4 +1,5 @@
 # JFood Application
 
-Aplikasi JFood merupakan aplikasi pembelian makanan berbasis Java
-Muhammad Adisatriyo Pratama - 1706986031
+JFood is a food ordering app based on Java and using Spring Boot frameork 
+
+Muhammad Adisatriyo Pratama
