@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RequestMapping("/invoice")
-@CrossOrigin(origins = "*", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 
 public class InvoiceController {
