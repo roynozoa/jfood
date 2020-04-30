@@ -3,14 +3,16 @@ package adisatriyo.jfood.controller;
 import adisatriyo.jfood.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RequestMapping("/customer")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class CustomerController {
 
-    @RequestMapping("")
-    public String indexPage(@RequestParam(value="name", defaultValue="world") String name) {
-        return "Hello " + name;
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public ArrayList<Customer> getAllCustomer() {
+        return DatabaseCustomer.getCustomerDatabase();
     }
 
     @RequestMapping("/{id}")
