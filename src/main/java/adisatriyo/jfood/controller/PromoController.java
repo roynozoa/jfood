@@ -1,6 +1,8 @@
 package adisatriyo.jfood.controller;
 
 import adisatriyo.jfood.*;
+import adisatriyo.jfood.databases.DatabasePromo;
+import adisatriyo.jfood.databases.DatabasePromoPostgres;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
@@ -12,12 +14,12 @@ public class PromoController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ArrayList<Promo> getAllPromo() {
-        return DatabasePromo.getPromoDatabase();
+        return DatabasePromoPostgres.getPromoDatabase();
     }
 
     @RequestMapping(value = "/{code}", method = RequestMethod.GET)
     public Promo getPromoByCode(@RequestParam String code) {
-        Promo promo = DatabasePromo.getPromoByCode(code);
+        Promo promo = DatabasePromoPostgres.getPromoByCode(code);
         return promo;
     }
 
@@ -28,12 +30,8 @@ public class PromoController {
                           @RequestParam(value = "active") boolean active) {
 
         Promo promo = promo = new Promo(DatabasePromo.getLastId()+1, code, discount, minPrice, active);
-        try {
-            DatabasePromo.addPromo(promo);
-        } catch (PromoCodeAlreadyExistsException e) {
-            e.getMessage();
-            return null;
-        }
+        DatabasePromoPostgres.insertPromo(promo);
+
         return promo;
     }
 

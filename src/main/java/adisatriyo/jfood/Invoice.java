@@ -21,18 +21,18 @@ public abstract class Invoice implements Runnable{
     private Calendar date;
     protected int totalPrice;
     private Customer customer;
-    private InvoiceStatus invoiceStatus;
+    private String invoiceStatus;
+    private PaymentType paymentType;
 
     /**
      * Constructor kelas Invoice
      */
-    public Invoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus){
+    public Invoice(int id, ArrayList<Food> foods, Customer customer){
         this.id = id;
         this.foods = foods;
         setDate(Calendar.getInstance());
-        this.totalPrice = totalPrice;
         this.customer = customer;
-        this.invoiceStatus = invoiceStatus;
+        this.invoiceStatus = "Ongoing";
     }
 
     /**
@@ -98,7 +98,7 @@ public abstract class Invoice implements Runnable{
      * 
      * @return   status pembayaran
      */
-    public InvoiceStatus getInvoiceStatus(){
+    public String getInvoiceStatus(){
         return this.invoiceStatus;
     }
     
@@ -155,13 +155,17 @@ public abstract class Invoice implements Runnable{
     }
     
     
+    public void setPaymentType(PaymentType paymentType){
+        this.paymentType = paymentType;
+    }
+
     /**
      * Metode setInvoiceStatus untuk mengatur status invoice
      *
      * 
      * @param    /status invoice
      */
-    public void setInvoiceStatus(InvoiceStatus invoiceStatus){
+    public void setInvoiceStatus(String invoiceStatus){
         this.invoiceStatus = invoiceStatus;
     }
 

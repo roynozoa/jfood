@@ -5,7 +5,10 @@
  * @author (Muhammad Adisatriyo Pratama)
  * @version (9/4/2020)
  */
-package adisatriyo.jfood;
+package adisatriyo.jfood.databases;
+
+import adisatriyo.jfood.Seller;
+import adisatriyo.jfood.SellerNotFoundException;
 
 import java.util.ArrayList;
 

@@ -23,15 +23,15 @@ public class CashInvoice extends Invoice{
     /**
      * Constructor 1 kelas CashlessInvoice (tanpa ongkir)
      */
-    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus){
-        super(id, foods, customer, invoiceStatus);
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer){
+        super(id, foods, customer);
     }
     
     /**
      * Constructor 2 kelas CashlessInvoice (dengan ongkir)
      */
-    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus, int deliveryFee){
-        super(id, foods, customer, invoiceStatus);
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer, int deliveryFee){
+        super(id, foods, customer);
         this.deliveryFee = deliveryFee;
     }
     
@@ -70,20 +70,24 @@ public class CashInvoice extends Invoice{
      * 
      */
     public void setTotalPrice(){
-        for(Food foodList : getFoods())
-        {
-            totalPrice += foodList.getPrice();
-
+        super.totalPrice = 0;
+        if(deliveryFee > 0) {
+            for(Food foods:getFoods()) {
+                super.totalPrice += foods.getPrice();
+            }
+            super.totalPrice += getDeliveryFee();
         }
-        if (deliveryFee != 0){
-            totalPrice += getDeliveryFee();
-        } else{
-            totalPrice = totalPrice;
+        else if(deliveryFee == 0) {
+            for(Food foods:getFoods()) {
+                super.totalPrice += foods.getPrice();
+            }
         }
-
         
     }
 
+    public void setTotalPrices(int totalPrices){
+        super.totalPrice = totalPrices;
+    }
 
 
 

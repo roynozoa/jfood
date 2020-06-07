@@ -8,17 +8,25 @@ package adisatriyo.jfood;
 
 public class Location{
     //merupakan field dari kelas Location
+    int id;
     String province, description, city;
     
     /**
      * Merupakan constructor dari kelas Location
      */
-    public Location(String city, String province, String description){
+    public Location(int id, String city, String province, String description){
+        this.id = id;
         this.city = city;
         this.province = province;
         this.description = description;
     }
-    
+
+
+    public int getId()
+    {
+        return id;
+    }
+
     /**
      * Metode getProvince untuk mendapatknan lokasi provinsi
      *
@@ -51,9 +59,14 @@ public class Location{
     /**
      * Metode setProvince untuk mengatur lokasi provinsi
      *
-     * 
-     * @param    provinsi
+     *
+     * @param //provinsi
      */
+
+    public void setId(int id){
+        this.id = id;
+    }
+
     public void setProvince(String province){
         this.province = province;
     }
@@ -62,7 +75,7 @@ public class Location{
      * Metode setCity untuk mengatur lokasi kota
      *
      * 
-     * @param    kota
+     * @param //kota
      */
     public void setCity(String city){
         this.city = city;
@@ -72,7 +85,7 @@ public class Location{
      * Metode setDescription untuk mengatur deskripsi lokasi
      *
      * 
-     * @param    deskripsi
+     * @param    //deskripsi
      */
     public void setDescription(String description){
         this.description = description;

@@ -126,19 +126,11 @@ public class Customer {
     /**
      * Metode setEmail untuk mengatur email customer
      *
-     * 
+     *
      * @param    email customer
      */
     public void setEmail(String email){
-        String emailChecker = "^[\\w!#$%’+/=?`{|~^-]+(?:\\.[\\w!#$%’+/=?`{|}^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
-        Pattern checkEmail = Pattern.compile(emailChecker);
-        Matcher emailMatcher = checkEmail.matcher(email);
-        if (emailMatcher.find()){
-            this.email = email;
-        }
-        else {
-            this.email = " ";
-        }
+        this.email = email;
     }
     
     /**
@@ -148,18 +140,7 @@ public class Customer {
      * @param    password customer
      */
     public void setPassword(String password){
-        String passwordChecker = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$";
-        Pattern checkPassword = Pattern.compile(passwordChecker);
-        Matcher passwordMatcher = checkPassword.matcher(password);
-        if (passwordMatcher.find() ){
-            this.password = password;
-        }
-        else {
-            this.password = " ";
-        }
-        
-
-        //this.password = password;
+        this.password = password;
     }
     
     /**

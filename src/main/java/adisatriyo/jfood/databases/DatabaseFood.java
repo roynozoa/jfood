@@ -4,7 +4,11 @@
  * @author (Muhammad Adisatriyo Pratama)
  * @version (9/4/2020)
  */
-package adisatriyo.jfood;
+package adisatriyo.jfood.databases;
+
+import adisatriyo.jfood.Food;
+import adisatriyo.jfood.FoodCategory;
+import adisatriyo.jfood.FoodNotFoundException;
 
 import java.util.ArrayList;
 
@@ -22,7 +26,7 @@ public class DatabaseFood{
         return lastId;
     }
 
-    public static Food getFoodById(int id) throws FoodNotFoundException{
+    public static Food getFoodById(int id) throws FoodNotFoundException {
         for(Food food : FOOD_DATABASE){
             if(food.getId() == id){
                 return food;
@@ -41,7 +45,7 @@ public class DatabaseFood{
         }
         return LIST_FOOD_BY_SELLER;
     }
-    public static ArrayList<Food> getFoodByCategory(FoodCategory category){
+    public static ArrayList<Food> getFoodByCategory(String category){
         ArrayList<Food> LIST_FOOD_BY_CATEGORY = new ArrayList<Food>();
         for(Food food : FOOD_DATABASE){
             if(food.getCategory() == category){

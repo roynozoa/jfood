@@ -7,7 +7,11 @@
  * @version (9/4/2020)
  */
 
-package adisatriyo.jfood;
+package adisatriyo.jfood.databases;
+
+import adisatriyo.jfood.Customer;
+import adisatriyo.jfood.CustomerNotFoundException;
+import adisatriyo.jfood.EmailAlreadyExistsException;
 
 import java.util.ArrayList;
 
@@ -34,7 +38,7 @@ public class DatabaseCustomer{
         throw new CustomerNotFoundException(id);
     }
 
-    public static boolean addCustomer(Customer customer) throws EmailAlreadyExistsException{
+    public static boolean addCustomer(Customer customer) throws EmailAlreadyExistsException {
         for(Customer cust : CUSTOMER_DATABASE){
             if(cust.getEmail() == customer.getEmail()){
                 throw new EmailAlreadyExistsException(customer);

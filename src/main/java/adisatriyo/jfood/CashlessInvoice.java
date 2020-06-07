@@ -22,15 +22,15 @@ public class CashlessInvoice extends Invoice{
     /**
      * Constructor 1 kelas CashlessInvoice (tanpa promo)
      */
-    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus){
-        super(id, foods, customer, invoiceStatus);
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer){
+        super(id, foods, customer);
     }
     
     /**
      * Constructor 2 kelas CashlessInvoice (dengan promo)
      */
-    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, InvoiceStatus invoiceStatus, Promo promo){
-        super(id, foods, customer, invoiceStatus);
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer, Promo promo){
+        super(id, foods, customer);
         this.promo = promo;
     }
     
@@ -69,16 +69,13 @@ public class CashlessInvoice extends Invoice{
      * 
      */
     public void setTotalPrice(){
-        for(Food foodList : getFoods())
-        {
-            totalPrice += foodList.getPrice();
-        }
-        if (promo!= null  && getPromo().getActive() && totalPrice > getPromo().getMinPrice()){
+        super.totalPrice = 0;
 
-            totalPrice = totalPrice - promo.getDiscount();
+        for(Food foods: getFoods()) {
+            super.totalPrice += foods.getPrice();
         }
+        super.totalPrice -= promo.getDiscount();
 
-        
     }
     
     

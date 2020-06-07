@@ -14,12 +14,12 @@ public class Food{
     private int id,price;
     private String name;
     private Seller seller;
-    private FoodCategory category;
+    private String  category;
 
     /**
      * Merupakan constructor dari kelas Food
      */
-    public Food(int id, String name, Seller seller, int price, FoodCategory category){ 
+    public Food(int id, String name, Seller seller, int price, String category){
         //Food 
         this.id = id;
         this.price = price;
@@ -78,7 +78,7 @@ public class Food{
      * 
      * @return    kategori makanan
      */
-    public FoodCategory getCategory(){
+    public String getCategory(){
         return this.category;
     }
     
@@ -128,7 +128,7 @@ public class Food{
      * 
      * @param    /kategori makanan
      */
-    public void setCategory(FoodCategory category){
+    public void setCategory(String category){
         this.category = category;
     }
     

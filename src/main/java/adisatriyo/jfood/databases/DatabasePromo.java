@@ -4,7 +4,11 @@
  * @author (Muhammad Adisatriyo Pratama)
  * @version (9/4/2020)
  */
-package adisatriyo.jfood;
+package adisatriyo.jfood.databases;
+
+import adisatriyo.jfood.Promo;
+import adisatriyo.jfood.PromoCodeAlreadyExistsException;
+import adisatriyo.jfood.PromoNotFoundException;
 
 import java.util.ArrayList;
 
@@ -37,7 +41,7 @@ public class DatabasePromo{
         }
         return null;
     }
-    public static boolean addPromo(Promo promo) throws PromoCodeAlreadyExistsException{
+    public static boolean addPromo(Promo promo) throws PromoCodeAlreadyExistsException {
         for(Promo pro : PROMO_DATABASE){
             if(pro.getCode() == promo.getCode()){
                 throw new PromoCodeAlreadyExistsException(promo);

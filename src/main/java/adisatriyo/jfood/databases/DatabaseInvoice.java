@@ -4,7 +4,9 @@
  * @author (Muhammad Adisatriyo Pratama)
  * @version (9/4/2020)
  */
-package adisatriyo.jfood;
+package adisatriyo.jfood.databases;
+
+import adisatriyo.jfood.*;
 
 import java.util.ArrayList;
 
@@ -29,20 +31,22 @@ public class DatabaseInvoice {
         throw new InvoiceNotFoundException(id);
     }
 
-    public static ArrayList<Invoice> getInvoiceByCustomer(int customerId) throws CustomerNotFoundException {
-        ArrayList<Invoice> LIST_INVOICE_BY_CUSTOMER = new ArrayList<>();
-        Customer customer = DatabaseCustomer.getCustomerById(customerId);
-        for(Invoice invoice : INVOICE_DATABASE){
-            if(customer.equals(invoice.getCustomer())){
-                LIST_INVOICE_BY_CUSTOMER.add(invoice);
+    public static ArrayList<Invoice> getInvoiceByCustomer(int customerId) {
+        ArrayList<Invoice> listCust = new ArrayList<Invoice>();
+        for(Invoice invoice: INVOICE_DATABASE)
+        {
+            if(invoice.getCustomer().getId() == customerId) {
+                listCust.add(invoice);
+
             }
+
         }
-        return LIST_INVOICE_BY_CUSTOMER;
+        return listCust;
     }
 
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException {
         for(Invoice struk : INVOICE_DATABASE){
-            if(struk.getId() == invoice.getId() && struk.getInvoiceStatus() == InvoiceStatus.Ongoing){
+            if(struk.getId() == invoice.getId() && struk.getInvoiceStatus() == "Ongoing"){
                 throw new OngoingInvoiceAlreadyExistsException(invoice);
             }
         }
@@ -52,9 +56,9 @@ public class DatabaseInvoice {
 
     }
 
-    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
+    public static boolean changeInvoiceStatus(int id, String invoiceStatus){
         for(Invoice invoice : INVOICE_DATABASE){
-            if(invoice.getInvoiceStatus() == InvoiceStatus.Ongoing && invoice.getId() == id){
+            if(invoice.getInvoiceStatus() == "Ongoing" && invoice.getId() == id){
                 invoice.setInvoiceStatus(invoiceStatus);
                 return true;
             }

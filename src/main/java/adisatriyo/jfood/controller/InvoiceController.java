@@ -1,6 +1,7 @@
 package adisatriyo.jfood.controller;
 
 import adisatriyo.jfood.*;
+import adisatriyo.jfood.databases.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,9 +12,16 @@ import java.util.ArrayList;
 
 public class InvoiceController {
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping("")
     public ArrayList<Invoice> getAllInvoice() {
-        return DatabaseInvoice.getInvoiceDatabase();
+        ArrayList<Invoice> invoiceList;
+        try {
+            invoiceList = DatabaseInvoice.getInvoiceDatabase();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+        return invoiceList;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -22,40 +30,31 @@ public class InvoiceController {
         try {
             invoice = DatabaseInvoice.getInvoiceById(id);
         } catch (InvoiceNotFoundException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
-
         }
         return invoice;
     }
 
     @RequestMapping(value = "/customer/{customerId}", method = RequestMethod.GET)
-    public ArrayList<Invoice> getInvoiceByCustomerId(@PathVariable int customerId) {
-        ArrayList<Invoice> invoiceByCustomer = null;
-        try {
-            invoiceByCustomer = DatabaseInvoice.getInvoiceByCustomer(customerId);
-        } catch (CustomerNotFoundException e) {
-            e.getMessage();
-            return null;
-
-        }
-        return invoiceByCustomer;
+    public ArrayList<Invoice> getInvoiceByCustomerId(@PathVariable int customerId) throws CustomerNotFoundException{
+        return DatabaseInvoice.getInvoiceByCustomer(customerId);
     }
 
 
     @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
     public Invoice changeInvoiceStatus(@PathVariable int id,
-                                       @RequestParam(value= "status") InvoiceStatus status){
+                                       @RequestParam(value= "status") String status){
         Invoice invoice;
-        if(DatabaseInvoice.changeInvoiceStatus(id, status)){
-            try {
-                invoice = DatabaseInvoice.getInvoiceById(id);
-                return invoice;
-            } catch (InvoiceNotFoundException e) {
-                e.getMessage();
-            }
+        DatabaseInvoice.changeInvoiceStatus(id, status);
+        try {
+            invoice = DatabaseInvoice.getInvoiceById(id);
         }
-        return null;
+        catch (Exception error) {
+            error.getMessage();
+            return null;
+        }
+        return invoice;
 
     }
 
@@ -63,11 +62,11 @@ public class InvoiceController {
     public Boolean removeInvoice(@PathVariable int id){
         try {
             DatabaseInvoice.removeInvoice(id);
-        } catch (InvoiceNotFoundException e) {
-            e.getMessage();
+        }
+        catch (InvoiceNotFoundException e) {
+            System.out.println(e.getMessage());
             return false;
         }
-
         return true;
     }
 
@@ -78,28 +77,21 @@ public class InvoiceController {
 
         ArrayList<Food> LIST_FOOD = new ArrayList<>();
         for(int i : foodList){
-            try {
-                LIST_FOOD.add(DatabaseFood.getFoodById(i));
-            } catch (FoodNotFoundException e) {
-                e.getMessage();
-            }
+            LIST_FOOD.add(DatabaseFoodPostgres.getFoodById(i));
+
         }
 
-        Invoice invoice = null;
-        try {
-            invoice = new CashInvoice(DatabaseInvoice.getLastId()+1, LIST_FOOD, DatabaseCustomer.getCustomerById(customerId), InvoiceStatus.Ongoing, deliveryFee);
-        } catch (CustomerNotFoundException e) {
-            e.getMessage();
-        }
-        try {
+        try{
+            Invoice invoice = new CashInvoice(DatabaseInvoice.getLastId() + 1, LIST_FOOD, DatabaseCustomerPostgres.getCustomerById(customerId), deliveryFee);
             DatabaseInvoice.addInvoice(invoice);
-
-        } catch (OngoingInvoiceAlreadyExistsException e) {
-            e.getMessage();
-            return null;
+            invoice.setTotalPrice();
+            return invoice;
         }
-        invoice.setTotalPrice();
-        return invoice;
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+
     }
 
     @RequestMapping(value = "/createCashlessInvoice", method = RequestMethod.POST)
@@ -109,28 +101,27 @@ public class InvoiceController {
 
         ArrayList<Food> LIST_FOOD = new ArrayList<>();
         for(int i : foodList){
-            try {
-                LIST_FOOD.add(DatabaseFood.getFoodById(i));
-            } catch (FoodNotFoundException e) {
-                e.getMessage();
-            }
-        }
-        Invoice invoice = null;
-        try {
-            invoice = new CashlessInvoice(DatabaseInvoice.getLastId()+1, LIST_FOOD, DatabaseCustomer.getCustomerById(customerId), InvoiceStatus.Ongoing, DatabasePromo.getPromoByCode(promoCode));
-        } catch (CustomerNotFoundException e) {
-            e.getMessage();
-        }
-        try {
-            DatabaseInvoice.addInvoice(invoice);
+            LIST_FOOD.add(DatabaseFoodPostgres.getFoodById(i));
 
-        } catch (OngoingInvoiceAlreadyExistsException e) {
-            e.getMessage();
-            return null;
         }
-        invoice.setTotalPrice();
-        return invoice;
+
+        Promo promo = DatabasePromoPostgres.getPromoByCode(promoCode);
+        try{
+            Invoice invoice = new CashlessInvoice(DatabaseInvoice.getLastId() + 1, LIST_FOOD, DatabaseCustomerPostgres.getCustomerById(customerId), DatabasePromoPostgres.getPromoByCode(promoCode));
+            DatabaseInvoice.addInvoice(invoice);
+            invoice.setTotalPrice();
+            return invoice;
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+
+
     }
+
+
+
 
 
 
